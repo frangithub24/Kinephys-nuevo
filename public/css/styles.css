@@ -1,0 +1,89 @@
+/*Estilos generales*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    margin:0;
+    padding:0;
+    font-family: "Montserrat", sans-serif;
+    background-color: white;
+    color:black;
+    overflow-x:hidden;
+}
+
+header {
+    background-color: rgb(245,245,245);
+    width:100%;
+}
+
+/*estilos del contenedor que incluye al logo y el navbar*/
+.container{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo-img {
+    height:auto;
+    width:150px;
+    margin:0;
+    padding: 15px 10px;
+}
+
+/*estilos de nav:contiene a nav-list y al menu hamburguesa*/
+.nav {
+    display: flex;   
+    color:black; 
+    padding:25px;
+}
+
+/*caracteristicas del nav-list:*/
+.nav-list {
+    display:none; /*lo oculto en mobile*/
+}
+
+/*estilos de nav-list: pongo color negro y quito subrayado*/
+.nav-list a{
+    color:black;
+    text-decoration:none;
+}
+
+
+/*características del menu-icon, que contiene al hamburguesa: disposición de las líneas*/
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*características del menú hamburguesa
+  alto, ancho, color y separación entre sus líneas*/
+.menu-bar {
+    width: 30px;
+    height: 3px;
+    background-color: #000;
+    margin: 4px 0;
+}
+
+/*----Desktop------*/
+
+@media (min-width: 768px) {
+
+.nav-list {
+    list-style: none; /*saco las viñetas*/
+    display:flex; 
+    flex-direction:row; /*una al lado de la otra*/
+    gap: 1.5rem; /* separo entre cada una*/
+    padding:30px;
+}
+
+.menu-bar {
+    display:none; /*lo elimino cuando paso a desktop*/
+}
+}
