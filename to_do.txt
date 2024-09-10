@@ -1,0 +1,10 @@
+1- El logo va que dar con fondo o sin fondo? avisame asi lo quito
+
+2- dentro de public --> carpeta js --> menu_hamburguesa.js
+
+3- nombre de las imágenes .... el logo de la empresa se llama logo-header.jpg y en realidad podría llamarse solo logo.jpg
+
+4- intenta incorporar un icono para el menú hamburguesa como por ejemplo algun de https://yesicon.app/tabler
+
+
+5- crear la visual del menú hamburguesa abierto con las mismas links que en dektop
