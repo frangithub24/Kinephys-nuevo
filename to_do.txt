@@ -1,8 +1,10 @@
-1- El logo va que dar con fondo o sin fondo? avisame asi lo quito
+1- El logo va que dar con fondo o sin fondo? avisame asi lo quito: 
+  Quiero que quede todo el fondo gris como el header, asique la respuesta es: quitame el fondo. Igual si querés avisame y yo lo voy haciendo. 
 
 2- dentro de public --> carpeta js --> menu_hamburguesa.js
-
+Listo
 3- nombre de las imágenes .... el logo de la empresa se llama logo-header.jpg y en realidad podría llamarse solo logo.jpg
+Listo.
 
 4- intenta incorporar un icono para el menú hamburguesa como por ejemplo algun de https://yesicon.app/tabler
 
