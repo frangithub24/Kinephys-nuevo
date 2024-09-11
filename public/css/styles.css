@@ -44,7 +44,9 @@ header {
 }
 
 /*caracteristicas del nav-list:*/
-
+.nav-list {
+    display:none;
+}
 
 /*estilos de nav-list: pongo color negro y quito subrayado*/
 .nav-list a{
