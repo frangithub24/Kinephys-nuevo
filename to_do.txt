@@ -2,3 +2,6 @@
 
 
 5- crear la visual del menú hamburguesa abierto con las mismas links que en dektop
+
+
+6-  volviste a colocar logo.jpg y public/images/logo.png es el logo sin fondo?

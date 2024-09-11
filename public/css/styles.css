@@ -48,6 +48,10 @@ header {
     display:none;
 }
 
+.nav-mobile{
+    display: none ;
+} 
+
 /*estilos de nav-list: pongo color negro y quito subrayado*/
 .nav-list a{
     color:black;
