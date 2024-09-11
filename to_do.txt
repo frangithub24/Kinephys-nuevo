@@ -1,0 +1,4 @@
+4- intenta incorporar un icono para el menú hamburguesa como por ejemplo algun de https://yesicon.app/tabler
+
+
+5- crear la visual del menú hamburguesa abierto con las mismas links que en dektop
