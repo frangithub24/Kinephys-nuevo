@@ -44,9 +44,7 @@ header {
 }
 
 /*caracteristicas del nav-list:*/
-.nav-list {
-    display:none; /*lo oculto en mobile*/
-}
+
 
 /*estilos de nav-list: pongo color negro y quito subrayado*/
 .nav-list a{
@@ -59,6 +57,7 @@ header {
 .menu-icon {
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 }
 
 
@@ -70,20 +69,25 @@ header {
     background-color: #000;
     margin: 4px 0;
 }
-
+/* Clase que muestra el menú en mobile */
+.nav-list.show {
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+}
 /*----Desktop------*/
 
 @media (min-width: 768px) {
 
 .nav-list {
     list-style: none; /*saco las viñetas*/
-    display:flex; 
     flex-direction:row; /*una al lado de la otra*/
     gap: 1.5rem; /* separo entre cada una*/
     padding:30px;
+    display:flex;
 }
 
-.menu-bar {
+.menu-icon {
     display:none; /*lo elimino cuando paso a desktop*/
 }
 }
