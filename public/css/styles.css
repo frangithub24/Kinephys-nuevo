@@ -48,9 +48,28 @@ header {
     display:none;
 }
 
+/*características del nav-mobile(oculto por defecto)*/
 .nav-mobile{
-    display: none ;
+    display: none;
+    padding: 20px; 0px;   
+    background-color:rgb(245,245,245);
+    width:100%;
 } 
+.nav-mobile-list {
+    width:100%;
+    
+}
+
+.nav-mobile li {
+    margin-bottom: 20px; /* Añade espacio entre los elementos de la lista */
+    list-style:none;
+    margin-left:310px;
+}
+
+.nav-mobile a {
+    text-decoration: none;
+    color: black;
+}
 
 /*estilos de nav-list: pongo color negro y quito subrayado*/
 .nav-list a{
@@ -76,11 +95,7 @@ header {
     margin: 4px 0;
 }
 /* Clase que muestra el menú en mobile */
-.nav-list.show {
-    visibility: visible;
-    opacity: 1;
-    height: auto;
-}
+
 /*----Desktop------*/
 
 @media (min-width: 768px) {
