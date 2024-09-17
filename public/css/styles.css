@@ -18,17 +18,25 @@ body {
 
 header {
     background-color: rgb(245,245,245);
-    width:100%;
+    width:115%;
+    padding:10px 15px;
+    height:120px;
+    
 }
 
 /*estilos del contenedor que incluye al logo y el navbar*/
 .container{
     display:flex;
     flex-direction:row;
-    align-items:center;
     justify-content:space-between;
+    align-items:flex-start;
+    margin-top:-16px;
+    padding:0 8px;
 }
-
+.logo {
+    display:flex;
+    align-items:center
+}
 .logo-img {
     height:auto;
     width:150px;
@@ -40,7 +48,7 @@ header {
 .nav {
     display: flex;   
     color:black; 
-    padding:25px;
+    padding:60px;
 }
 
 /*caracteristicas del nav-list:*/
@@ -49,8 +57,36 @@ header {
 }
 
 .nav-mobile{
-    display: none ;
+    display: none;
+    padding: 0px; 10px;   
+    background-color:white;
+    width:110%;
+    height:260px;    
+    font-size:15px;
 } 
+
+.list-mobile {
+    white-space: nowrap;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    margin-right:45px;
+    padding:0 1px;
+    background-color:moccasin;
+}
+.nav-mobile a {
+    text-decoration: none;
+    color: black;
+    margin-left:10px;
+    width:100%;
+    cursor:pointer;
+}
+.nav-mobile li {
+    list-style-type: none;
+    padding:20px;
+    margin-left:350px;
+}
+
 
 /*estilos de nav-list: pongo color negro y quito subrayado*/
 .nav-list a{
@@ -60,13 +96,26 @@ header {
 
 
 /*características del menu-icon, que contiene al hamburguesa: disposición de las líneas*/
+.menu-container {
+    display: flex;
+    flex-direction:row;
+    width:40px;
+}
+
 .menu-icon {
     display: flex;
     flex-direction: column;
     cursor: pointer;
+    height: 50px;
+    width:50px;
 }
-
-
+.menu-back {
+    display:none;
+    flex-direction: column;
+    cursor: pointer;
+    height: 50px;
+    width:50px;
+}
 /*características del menú hamburguesa
   alto, ancho, color y separación entre sus líneas*/
 .menu-bar {
@@ -85,15 +134,33 @@ header {
 
 @media (min-width: 768px) {
 
+header {
+    background-color: rgb(245,245,245);
+    width:100%;
+    padding:10px 15px;
+    display:flex;
+    height:120px;
+   }
+
+.container {
+    gap: 8rem;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+
+}
+
 .nav-list {
     list-style: none; /*saco las viñetas*/
     flex-direction:row; /*una al lado de la otra*/
-    gap: 1.5rem; /* separo entre cada una*/
-    padding:30px;
+    gap: 5rem; /* separo entre cada una*/
+    padding:10px;
     display:flex;
+    font-size:15px;
 }
-
 .menu-icon {
     display:none; /*lo elimino cuando paso a desktop*/
 }
+
 }
