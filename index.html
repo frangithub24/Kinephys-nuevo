@@ -18,38 +18,93 @@
             </div>
             <nav class="nav">
                 <ul class="nav-list">
-                    <li><a href="#">Quienes somos</a></li>
-                    <li><a href="#">Nuestros servicios</a></li>
+                    <li><a href="#quienes-somos" id="quienes-somos-link">Quienes somos</a></li>
+                    <li><a href="#nuestros-servicios" id="nuestros-servicios-link">Nuestros servicios</a></li>
                     <li><a href="#">Cobertura</a></li>
                     <li><a href="#">Contacto</a></li>                         
                 </ul>
-                <div class="menu-container">
-                    <div class="menu-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M8 12h8M6 18h12"/></svg>    
-                    </div>
-                    <div class="menu-back">                    
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" /></svg>                      
-                    </div>
+            <div class="menu-container">
+         <!-- menú hamburguesa -->
+                <div class="menu-icon" id="menu-toggle">       
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M8 12h8M6 18h12"/></svg>
+                </div>    
+                <div class="menu-back">                    
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" /></svg>                      
                 </div>
-
+            </div>
             </nav>
         </div>  
-
     </header>  
     
-    
-    <section class="nav-mobile">
+    <section class="nav-mobile" id="nav-mobile">
         <ul class="list-mobile">
-            <li><a href="#">Quienes somos</a></li>
-            <li><a href="#">Nuestros servicios</a></li>
+            <li><a href="#quienes-somos" id="quienes-somos-link">Quienes somos</a></li>
+            <li><a href="#nuestros-servicios" id="nuestros-servicios-link">Nuestros servicios</a></li>
             <li><a href="#">Cobertura</a></li>
             <li><a href="#">Contacto</a></li>                         
         </ul>
     </section>
 
+    <div class = "heroe-slider">
+        <ul>
+            <li><img src = "public/images/entrada-principal.jpg"></li>
+            <li><img src = "public/images/entrada-heroe.jpg"></li>
+            <li><img src = "public/images/consultorio1.jpg"></li>
+            <li><img src = "public/images/consultorio2.jpg"></li>
+            <li><img src = "public/images/consultorio3.jpg"></li>
+            <li><img src = "public/images/consultorio4.jpg"></li>
+            <li><img src = "public/images/consultorio5.jpg"></li>
+            <li><img src = "public/images/consultorio6.jpg"></li>
+        </ul>
+        </div>
+    
+    <section id= "quienes-somos" class = "quienes-somos">
+        <h2>Quienes somos</h2>
+            <p> Somos un consultorio de kinesiología conformado por un grupo de profesionales dedicado a la rehabilitación funcional de distintas patologías. Tenemos el objetivo de mejorar la independencia funcional y la calidad de vida de nuestros pacientes y al mismo tiempo hacerlos sentir cómodos a través de una atención personalizada. 
+            </p>
+        <div class = "nosotros">
+            <img src = "public/images/quienes-somos-kine1.jpg" alt = "kine1">
+            <img src = "public/images/quienes-somos-kine2.jpg" alt = "kine2">
+        </div>
+        </section>
 
-
+        <section id= "nuestros-servicios" class = "nuestros-servicios">
+            <h2>Nuestros servicios</h2>
+            <div class = "servicios">
+                <div class = "servicio-item">
+                        <img src = "public/images/servicios-kineDeportiva.jpg" alt = "Kinesiologiá traumatológica y deportiva">
+                        <div class = "servicio-titulo">
+                        <h3>Kinesiología traumatológica y deportiva</h3>
+                        </div>
+                </div>
+                <div class = "servicio-item">
+                        <img src = "public/images/servicios-rhbRespiratoria.jpg" alt = "Rehabilitación respiratoria">
+                        <div class = "servicio-titulo">
+                        <h3>Rehabilitación Respiratoria</h3>
+                        </div>
+                </div>
+                <div class = "servicio-item">
+                        <img src = "public/images/servicios-osteopatia.jpg" alt = "Osteopatía">
+                        <div class = "servicio-titulo">
+                        <h3>Osteopatía</h3>
+                        </div>
+                </div>
+                <div class = "servicio-item">
+                        <img src = "public/images/servicios-adultoMayor.jpg" alt = "Actividad física en el adulto mayor">
+                        <div class = "servicio-titulo">
+                        <h3>Actividad física en el adulto mayor</h3>
+                        </div>
+                </div>
+                <div class = "servicio-item">
+                    <img src = "public/images/servicios-mep.jpg" alt = "Microelectrólisis percutánea">
+                    <div class = "servicio-titulo">
+                    <h3>Microelectrólisis percutánea</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
 
 
 
