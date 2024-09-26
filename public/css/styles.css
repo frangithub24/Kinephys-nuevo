@@ -160,11 +160,6 @@ header {
     background-color: #000;
     margin: 4px 0;
 }
-<<<<<<< HEAD
-/* Clase que muestra el menú en mobile */
-
-/*----Desktop------*/
-=======
 
 .heroe-slider {
     width:100%;
@@ -299,8 +294,7 @@ header {
     left: 0;
     top: 0;
     width: 100%;
-    height: 100%;
-    
+    height: 100%;   
     opacity:0;
 }
   
@@ -325,7 +319,6 @@ header {
   }
   
     /*----Desktop------*/
->>>>>>> recuperacion-f3bb369
 
 @media (min-width: 768px) {
 
