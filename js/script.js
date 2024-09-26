@@ -98,4 +98,27 @@ document.addEventListener('DOMContentLoaded', () => {
      sliderContainer.addEventListener('mouseleave', () => {
         autoSlide = startAutoSlide(); // Reiniciar el autoslide cuando el usuario quite el mouse 
     });
-   
+
+    // Obtener el modal y el botón de cerrar
+    const servicioItems = document.querySelectorAll(".servicio-item");
+    const modalTitulo = document.querySelector(".modal-titulo");
+    const modal = document.getElementById("modal");
+    const modalTexto = document.querySelector(".modal-texto");
+    const modalCerrar = document.querySelector(".modal-cerrar");
+
+    
+    
+    servicioItems.forEach(servicio => {
+        servicio.addEventListener("click", () => {
+            const descripcion = servicio.getAttribute("data-descripcion");
+            modalTexto.textContent = descripcion;
+
+        modal.classList.add("show"); // Agrega la clase 'show' para mostrar el modal
+    });
+    });
+    modalCerrar.addEventListener("click", ()=>{
+        modal.classList.remove("show"); // Elimina la clase 'show' al cerrar el modal
+
+        });
+});
+
