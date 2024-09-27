@@ -58,18 +58,18 @@ header {
     display:none;
 }
 
-.nav-mobile{
+.nav-mobile {
     display: none;
-    position:absolute;
+    position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-    padding: 0px; 10px;   
-    background-color: rgb(245,245,245);
-    overflow:hidden;
-    max-height:0; /*oculta el menu inicialmente*/    
-    font-size:15px;
-    transition: max-height 5s ease-out; /*transición suave */
+    padding: 0 10px; /* Corrección de padding */
+    background-color: rgb(245, 245, 245);
+    overflow: hidden;
+    max-height: 0; /* Oculta el menú inicialmente */
+    font-size: 15px;
+    transition: max-height 0.5s ease-out; /* Transición más rápida */
     z-index: 5;
 } 
 

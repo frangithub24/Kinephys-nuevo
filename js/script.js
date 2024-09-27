@@ -98,4 +98,4 @@ document.addEventListener('DOMContentLoaded', () => {
      sliderContainer.addEventListener('mouseleave', () => {
         autoSlide = startAutoSlide(); // Reiniciar el autoslide cuando el usuario quite el mouse 
     });
-   
+});
