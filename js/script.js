@@ -1,13 +1,3 @@
-    // const menuIcon = document.querySelector('.menu-icon');
-    // const navList = document.querySelector('.nav-list');
-
-
-    
-
-    // menuIcon.addEventListener('click', function () {
-    //     navList.classList.toggle('block');
-    // });
-
 // DOMContentLoaded permite que se cargue todo al iniciar la pagina
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -61,6 +51,35 @@ document.addEventListener('DOMContentLoaded', () => {
         backButton.style.display = 'none'; // Oculta el botón de cerrar
     });
 
+    //Función para deslizar a la sección coberturas
+    const coberturasLink = document.querySelector("#coberturas-link");
+    const coberturasSection = document.querySelector("#coberturas");
+
+    coberturasLink.addEventListener("click", (e) => {
+        e.preventDefault(); //evita el comportamiento predeterminado del link
+        
+        coberturasSection.scrollIntoView({
+            behavior: 'smooth', // Desplazamiento suave 
+            block: "start"         
+        });
+
+        navMobile.classList.remove("open"); // Cierra el menú hamburguesa
+        hamburgerButton.style.display = 'block'; // Vuelve a mostrar el botón hamburguesa
+        backButton.style.display = 'none'; // Oculta el botón de cerrar
+    });
+
+        //Función para deslizar a la sección coberturas
+        const contactoLink = document.querySelector("#contacto-link");
+        const contactoSection = document.querySelector("#contacto");
+    
+        coberturasLink.addEventListener("click", (e) => {
+            e.preventDefault(); //evita el comportamiento predeterminado del link
+            
+            contactoSection.scrollIntoView({
+                behavior: 'smooth', // Desplazamiento suave 
+                block: "start"         
+        });
+    });
 //selecciono los elementos del slider//
     const slider = document.querySelector(".heroe-slider ul");
     const slides = document.querySelectorAll(".heroe-slider li");
@@ -99,20 +118,19 @@ document.addEventListener('DOMContentLoaded', () => {
         autoSlide = startAutoSlide(); // Reiniciar el autoslide cuando el usuario quite el mouse 
     });
 
+
     // Obtener el modal y el botón de cerrar
     const servicioItems = document.querySelectorAll(".servicio-item");
     const modalTitulo = document.querySelector(".modal-titulo");
     const modal = document.getElementById("modal");
     const modalTexto = document.querySelector(".modal-texto");
     const modalCerrar = document.querySelector(".modal-cerrar");
-
     
     
     servicioItems.forEach(servicio => {
         servicio.addEventListener("click", () => {
             const descripcion = servicio.getAttribute("data-descripcion");
             modalTexto.textContent = descripcion;
-
         modal.classList.add("show"); // Agrega la clase 'show' para mostrar el modal
     });
     });

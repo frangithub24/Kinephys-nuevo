@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">    
-    
+
 </head>
 <body>
     <header>
@@ -20,8 +20,8 @@
                 <ul class="nav-list">
                     <li><a href="#quienes-somos" id="quienes-somos-link">Quienes somos</a></li>
                     <li><a href="#nuestros-servicios" id="nuestros-servicios-link">Nuestros servicios</a></li>
-                    <li><a href="#">Cobertura</a></li>
-                    <li><a href="#">Contacto</a></li>                         
+                    <li><a href="#coberturas" id="coberturas-link">Coberturas</a></li>
+                    <li><a href="#contacto" id="contacto-link">Contacto</a></li>                         
                 </ul>
             <div class="menu-container">
          <!-- menú hamburguesa -->
@@ -41,8 +41,8 @@
         <ul class="list-mobile">
             <li><a href="#quienes-somos" id="quienes-somos-link">Quienes somos</a></li>
             <li><a href="#nuestros-servicios" id="nuestros-servicios-link">Nuestros servicios</a></li>
-            <li><a href="#">Cobertura</a></li>
-            <li><a href="#">Contacto</a></li>                         
+            <li><a href="#coberturas" id="coberturas-link">Coberturas</a></li>
+            <li><a href="#contacto" id="contacto-link">Contacto</a></li>                         
         </ul>
     </section>
 
@@ -72,13 +72,13 @@
     <section id= "nuestros-servicios" class = "nuestros-servicios">
         <h2>Nuestros servicios</h2>
         <div class = "servicios">
-            <div class = "servicio-item" data-descripcion="Falta información">
+            <div class = "servicio-item" data-descripcion="Falta strong información">
                     <img src = "public/images/servicios-kineDeportiva.jpg" alt = "Kinesiología traumatológica y deportiva">
                     <div class = "servicio-titulo">
                     <h3>Kinesiología traumatológica y deportiva</h3>
                     </div>
             </div>
-            <div class = "servicio-item" data-descripcion="La rehabilitacion respiratoria es un tratamiento dirigido a personas con enfermedades respiratorias con el objetivo de reducir su sintomatología (principalmente disnea), mejorar y mantener el máximo grado de independencia en las actividades diarias y disminuir sus exacerbación mejorando así su calidad de vida. Esta destinado a pacientes con EPOC, fibrosis pulmonar, cirugía pulmonar, enfermedades neuromusculares,  entre otros.">
+            <div class = "servicio-item" data-descripcion="La rehabilitacion respiratoria es un tratamiento dirigido a personas con enfermedades respiratorias con el objetivo de reducir su sintomatología (principalmente disnea), mejorar y mantener el máximo grado de independencia en las actividades diarias y disminuir sus exacerbación, optimizando así su calidad de vida. Está destinado a pacientes con EPOC, fibrosis pulmonar, cirugía pulmonar, enfermedades neuromusculares,  entre otros.">
                     <img src = "public/images/servicios-rhbRespiratoria.jpg" alt = "Rehabilitación respiratoria">
                     <div class = "servicio-titulo">
                     <h3>Rehabilitación Respiratoria</h3>
@@ -122,16 +122,52 @@
             </div>
         </div>
     </section>
-    
+
     <section class = "modal" id="modal">
         <div class="modal-content">
-            <h2 class = "modal-titulo"></h2>
             <p class= "modal-texto"></p>        
+            <button>QUIERO MÁS INFORMACIÓN</button>
             <span class="modal-cerrar">&times;</span>
         </div>
     </section>
+    
+    <section id= "coberturas" class = "coberturas"></section>
+        <h2>Coberturas</h2>
+            <p> Atendemos únicamente de forma particular. </p>
+    </section>
 
+    <section id= "contacto" class = "contacto"></section>
+    <h2>Contacto</h2>
+        <p> Dejanos tu consulta y te contactaremos a la brevedad: </p>
+        <form id="contacto-form">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre required">
 
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono">
+
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="8" required></textarea>
+
+        <div class="boton-enviar">
+            <button type="submit">ENVIAR MENSAJE</button>
+        </div>     
+        </form>
+</section>
+
+<section id = "direccion">
+    <p>Aristóbulo del Valle 122 - Lanús Oeste</p>
+
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3280.018561180611!2d-58.39349253718029!3d-34.70471177995896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccd21ee171cad%3A0x8c157eb66660b6a9!2sArist%C3%B3bulo%20del%20Valle%20122%2C%20B1824NBF%20Lan%C3%BAs%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1727789467530!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>"
+</section>
+
+<a href="https://wa.me/5491153699799" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" id="whatsapp-icon" alt="WhatsApp">
+</a>
 <script src="/js/script.js"></script> 
 </body>
 </html>
