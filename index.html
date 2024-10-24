@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kinephys</title>
-    <link rel="stylesheet" href = "public/css/styles.css">
+    <link rel="stylesheet" href = "/public/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">    
-
+    
 </head>
 <body>
     <header>
@@ -21,6 +21,7 @@
                     <li><a href="#quienes-somos" id="quienes-somos-link">Quienes somos</a></li>
                     <li><a href="#nuestros-servicios" id="nuestros-servicios-link">Nuestros servicios</a></li>
                     <li><a href="#coberturas" id="coberturas-link">Coberturas</a></li>
+                    <li><a href="#nuestros-horarios" id="nuestros-horarios-link">Nuestros horarios</a></li>
                     <li><a href="#contacto" id="contacto-link">Contacto</a></li>                         
                 </ul>
             <div class="menu-container">
@@ -42,6 +43,7 @@
             <li><a href="#quienes-somos" id="quienes-somos-link">Quienes somos</a></li>
             <li><a href="#nuestros-servicios" id="nuestros-servicios-link">Nuestros servicios</a></li>
             <li><a href="#coberturas" id="coberturas-link">Coberturas</a></li>
+            <li><a href="#nuestros-horarios" id="nuestros-horarios-link">Nuestros horarios</a></li>
             <li><a href="#contacto" id="contacto-link">Contacto</a></li>                         
         </ul>
     </section>
@@ -57,7 +59,9 @@
             <li><img src = "public/images/consultorio5.jpg"></li>
             <li><img src = "public/images/consultorio6.jpg"></li>
         </ul>
-        </div>
+        <button class="prev">&#8592;</button>
+        <button class="next">&#8594;</button>         
+    </div>
     
     <section id= "quienes-somos" class = "quienes-somos">
         <h2>Quienes somos</h2>
@@ -72,32 +76,61 @@
     <section id= "nuestros-servicios" class = "nuestros-servicios">
         <h2>Nuestros servicios</h2>
         <div class = "servicios">
-            <div class = "servicio-item" data-descripcion="Falta strong información">
-                    <img src = "public/images/servicios-kineDeportiva.jpg" alt = "Kinesiología traumatológica y deportiva">
+            <div class = "servicio-item" data-titulo="Kinesiología traumatológica y deportiva" data-descripcion=
+            "<p>El objetivo es optimizar la función de los pacientes con patologías musculoesqueléticas, utilizando como medio principal la prescripción de ejercicios. Este espacio está destinado tratar las siguientes patologías más prevalentes:</p> 
+                <h4> Columna:</h4>
+                <ul>
+                    <li>Dolor cervical</li> 
+                    <li>Cervicobraquialgias</li> 
+                    <li>Dorsalgias</li> 
+                    <li>Dolor lumbar crónico</li> 
+                    <li>Lumbociatalgias</li> 
+                </ul>
+            <h4> Miembros Superiores:</h4>
+                <ul>
+                    <li>Fracturas</li>
+                    <li>Lesiones del manguito rotador</li>
+                    <li>Inestabilidad de hombro</li> 
+                    <li>Tendinopatía bicipital</li> 
+                    <li>Epicondlialgia</li> 
+                    <li>Tenosinotivis de Quervain</li>  
+                </ul>    
+            <h4> Miembros Inferiores</h4>
+                <ul> 
+                    <li>Fracturas</li> 
+                    <li>Lesiones musculares</li> 
+                    <li>Lesiones de ligamentos cruzados y meniscos</li> 
+                    <li>Esguinces de rodilla</li>
+                    <li>Esguinces de tobillo</li>
+                    <li>Tendinopatía rotuliana</li> 
+                    <li>Sindrome femoropatelar</li> 
+                    <li>Fascitis plantar"</li>
+                </ul>    
+                <img src = "public/images/servicios-kineDeportiva.jpg" alt = "Kinesiología traumatológica y deportiva">
                     <div class = "servicio-titulo">
                     <h3>Kinesiología traumatológica y deportiva</h3>
                     </div>
-            </div>
-            <div class = "servicio-item" data-descripcion="La rehabilitacion respiratoria es un tratamiento dirigido a personas con enfermedades respiratorias con el objetivo de reducir su sintomatología (principalmente disnea), mejorar y mantener el máximo grado de independencia en las actividades diarias y disminuir sus exacerbación, optimizando así su calidad de vida. Está destinado a pacientes con EPOC, fibrosis pulmonar, cirugía pulmonar, enfermedades neuromusculares,  entre otros.">
+            </div> 
+            <div class = "servicio-item" data-titulo="Rehabilitación Respiratoria" data-descripcion="La rehabilitacion respiratoria es un tratamiento dirigido a personas con enfermedades respiratorias con el objetivo de reducir su sintomatología (principalmente disnea), mejorar y mantener el máximo grado de independencia en las actividades diarias y disminuir sus exacerbación, optimizando así su calidad de vida. Está destinado a pacientes con EPOC, fibrosis pulmonar, cirugía pulmonar, enfermedades neuromusculares,  entre otros.">
                     <img src = "public/images/servicios-rhbRespiratoria.jpg" alt = "Rehabilitación respiratoria">
                     <div class = "servicio-titulo">
                     <h3>Rehabilitación Respiratoria</h3>
                     </div>
             </div>
-            <div class = "servicio-item" data-descripcion="La osteopatia es un enfoque holístico, que considera al cuerpo como a una unidad en la que todas sus estructuras están interconectadas y se influyen entre sí, buscando así el verdadero origen de los síntomas. El objetivo de la osteopatía es restaurar el equilibrio del cuerpo a través de técnicas manuales para mejorar su función y promover la autocuración.
+            <div class = "servicio-item" data-titulo="Osteopatía" data-descripcion="La osteopatia es un enfoque holístico, que considera al cuerpo como a una unidad en la que todas sus estructuras están interconectadas y se influyen entre sí, buscando así el verdadero origen de los síntomas. El objetivo de la osteopatía es restaurar el equilibrio del cuerpo a través de técnicas manuales para mejorar su función y promover la autocuración.
             ">
                     <img src = "public/images/servicios-osteopatia.jpg" alt = "Osteopatía">
                     <div class = "servicio-titulo">
                     <h3>Osteopatía</h3>
                     </div>
             </div>
-            <div class = "servicio-item" data-descripcion="El espacio de actividad física en el adulto mayor es un espacio de atención en donde pacientes mayores van a poder mejorar su acondicionamiento físico general a través del aumento de la capacidad aeróbica, fortalecimiento y flexibilidad. El objetivo de este espacio es que el adulto mayor tenga un envejecimiento saludable, la prevención de enfermedades y la independencia en las actividades de la vida diaria. Destinado a pacientes mayores a 60 años, sedentarios, con factores de riesgo cardiovascular (hipertensión, dislipemia y sobrepeso), diabetes y artrosis. Entre otras.">
+            <div class = "servicio-item" data-titulo="Actividad física en el adulto mayor" data-descripcion="Es un espacio de atención en donde pacientes mayores van a poder mejorar su acondicionamiento físico general a través del aumento de la capacidad aeróbica, fortalecimiento y flexibilidad. El objetivo de este espacio es que el adulto mayor tenga un envejecimiento saludable, la prevención de enfermedades y la independencia en las actividades de la vida diaria. Destinado a pacientes mayores a 60 años, sedentarios, con factores de riesgo cardiovascular (hipertensión, dislipemia y sobrepeso), diabetes y artrosis. Entre otras.">
                     <img src = "public/images/servicios-adultoMayor.jpg" alt = "Actividad física en el adulto mayor">
                     <div class = "servicio-titulo">
                     <h3>Actividad física en el adulto mayor</h3>
                     </div>
             </div>
-            <div class = "servicio-item" data-descripcion="La microelectrólisis percutánea consiste en la aplicación de una corriente galvánica en el orden de microamperios, en forma percutánea (con una aguja de acupuntura) con el fin de generar, entre otros efectos:
+            <div class = "servicio-item" data-titulo="Electrólisis percutánea" data-descripcion="La microelectrólisis percutánea consiste en la aplicación de una corriente galvánica en el orden de microamperios, en forma percutánea (con una aguja de acupuntura) con el fin de generar, entre otros efectos:
             -Analgesia 
             -Regeneración del tejido 
             -Normalización del pH local.
@@ -125,23 +158,33 @@
 
     <section class = "modal" id="modal">
         <div class="modal-content">
-            <p class= "modal-texto"></p>        
-            <button>QUIERO MÁS INFORMACIÓN</button>
+            <h2 class="modal-titulo"></h2> <!-- Nuevo título para el modal -->
+            <div class= "modal-texto"></div>        
+            <button class="modal-boton">QUIERO MÁS INFORMACIÓN</button>
             <span class="modal-cerrar">&times;</span>
         </div>
     </section>
+
     
-    <section id= "coberturas" class = "coberturas"></section>
+    <section id= "coberturas" class = "coberturas">
         <h2>Coberturas</h2>
             <p> Atendemos únicamente de forma particular. </p>
     </section>
 
-    <section id= "contacto" class = "contacto"></section>
+    <section id="nuestros-horarios" class = "nuestros-horarios">
+        <h2>Nuestros horarios</h2>
+            <ul>
+                <li><strong>Osteopatía:</strong><br> Lunes a Jueves de 13 a 16 horas.</li><br>
+                <li><strong>Otras especialidades:</strong><br> Lunes y Miércoles de 9 a 12 horas /<br> Lunes a Jueves de 14 a 19 horas.</li>
+            </ul>        
+    </section>
+    
+    <section id= "contacto" class = "contacto">
     <h2>Contacto</h2>
         <p> Dejanos tu consulta y te contactaremos a la brevedad: </p>
         <form id="contacto-form">
             <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre required">
+            <input type="text" id="nombre" name="nombre" required>
 
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
@@ -156,18 +199,29 @@
             <button type="submit">ENVIAR MENSAJE</button>
         </div>     
         </form>
-</section>
+    </section>
 
 <section id = "direccion">
     <p>Aristóbulo del Valle 122 - Lanús Oeste</p>
 
     <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3280.018561180611!2d-58.39349253718029!3d-34.70471177995896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccd21ee171cad%3A0x8c157eb66660b6a9!2sArist%C3%B3bulo%20del%20Valle%20122%2C%20B1824NBF%20Lan%C3%BAs%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1727789467530!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3280.018561180611!2d-58.39349253718029!3d-34.70471177995896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccd21ee171cad%3A0x8c157eb66660b6a9!2sArist%C3%B3bulo%20del%20Valle%20122%2C%20B1824NBF%20Lan%C3%BAs%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1727789467530!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </section>
 
-<a href="https://wa.me/5491153699799" target="_blank">
+<a href="https://wa.me/5491153699799" target="_blank"> <!-- Avisa que el enlace se abre en una nueva pestaña -->
     <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" id="whatsapp-icon" alt="WhatsApp">
 </a>
+<footer>
+    <div class = "footer-content">
+        <p>© KINEPHYS 2024. All Rights Reserved.</p>
+        <p>Web Design by Francisco Esperón</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com" target="_blank"> 
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram">
+            </a>
+        </div>
+    </div>
+</footer>
 <script src="/js/script.js"></script> 
 </body>
 </html>
