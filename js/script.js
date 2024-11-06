@@ -22,17 +22,16 @@ document.addEventListener('DOMContentLoaded', () => {
    //Función para deslizar a la sección quienes somos
     const quienesSomosLink = document.querySelector("#quienes-somos-link");
     const quienesSomosSection = document.querySelector("#quienes-somos");
-
+    
     quienesSomosLink.addEventListener("click", (e) => {
         e.preventDefault(); //evita el comportamiento predeterminado del link
         quienesSomosSection.scrollIntoView({
             behavior: 'smooth', // Desplazamiento suave 
             block: "start"         
         });
-        
         navMobile.classList.remove("open"); // Cierra el menú hamburguesa
         hamburgerButton.style.display = 'block'; // Vuelve a mostrar el botón hamburguesa
-        backButton.style.display = 'none'; // Oculta el botón de cerrar
+        backButton.style.display = 'none'; // Oculta el botón de cerrar 
     });
 
     //Función para deslizar a la sección nuestros servicios
@@ -50,27 +49,10 @@ document.addEventListener('DOMContentLoaded', () => {
         hamburgerButton.style.display = 'block'; // Vuelve a mostrar el botón hamburguesa
         backButton.style.display = 'none'; // Oculta el botón de cerrar
     });
-
-    //Función para deslizar a la sección coberturas
-    const coberturasLink = document.querySelector("#coberturas-link");
-    const coberturasSection = document.querySelector("#coberturas");
-
-    coberturasLink.addEventListener("click", (e) => {
-        e.preventDefault(); //evita el comportamiento predeterminado del link
-        
-        coberturasSection.scrollIntoView({
-            behavior: 'smooth', // Desplazamiento suave 
-            block: "start"         
-        });
-
-        navMobile.classList.remove("open"); // Cierra el menú hamburguesa
-        hamburgerButton.style.display = 'block'; // Vuelve a mostrar el botón hamburguesa
-        backButton.style.display = 'none'; // Oculta el botón de cerrar
-    });
     
     //Función para deslizar a la sección nuestros horarios
-    const horariosLink = document.querySelector("#nuestros-horarios-link");
-    const horariosSection = document.querySelector("#nuestros-horarios");
+    const horariosLink = document.querySelector("#horarios-contacto-link");
+    const horariosSection = document.querySelector("#horarios-contacto");
 
     horariosLink.addEventListener("click", (e) => {
         e.preventDefault(); //evita el comportamiento predeterminado del link
@@ -85,118 +67,143 @@ document.addEventListener('DOMContentLoaded', () => {
         backButton.style.display = 'none'; // Oculta el botón de cerrar
     });
 
-        //Función para deslizar a la sección contacto
-        const contactoLink = document.querySelector("#contacto-link");
-        const contactoSection = document.querySelector("#contacto");
-    
-        contactoLink.addEventListener("click", (e) => {
-            e.preventDefault(); //evita el comportamiento predeterminado del link
-            
-            contactoSection.scrollIntoView({
-                behavior: 'smooth', // Desplazamiento suave 
-                block: "start"         
-        });
-    });
 //selecciono los elementos del slider//
     const slider = document.querySelector(".heroe-slider ul");
     const slides = document.querySelectorAll(".heroe-slider li");
     /*const prevButton = document.querySelector(".prev");
     const nextButton = document.querySelector(".next");*/
-
-    let currentIndex = 0;
     const totalSlides = slides.length;
-    const sliderContainer = document.querySelector("heroe-slider");
-
+    let currentIndex = 0;
+    //const images = document.querySelectorAll(".heroe-slider img");
+    //const totalImages = images.length;
+    //const sliderContainer = document.querySelector("heroe-slider");
+    // Clonamos el primer slide y lo añadimos al final para la continuidad visual
+    const firstSlideClone = slides[0].cloneNode(true);
+    slider.appendChild(firstSlideClone);
+   
     // Función para actualizar la posición del slider
     function updateSliderPosition() {
+        currentIndex++;
+        slider.style.transition = "transform 1s ease-in-out";
         slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-    }
 
-    //comenzar el auto desplazamiento
-    function startAutoSlide() {
-        return setInterval(() => {
-             if (currentIndex < totalSlides - 1 ) {
-                currentIndex ++;
-            } else {
-                currentIndex = 0; //volver al inicio cuando se llega al final//
-             }    
-            updateSliderPosition();
-        },3000); //cambia la imagen cada 3 segundos
-    }
 
-    //Funciones para mover el slider manualmente
- 
-    function nextSlide() {
-        if(currentIndex < totalSlides -1) {
-            currentIndex++;
-        } else {
-            currentIndex = 0;
-        }
-        updateSliderPosition();
-    }
-    function prevSlide(){
-        if(currentIndex > 0) {
-            currentIndex--;
-        } else {
-            currentIndex = totalSlides - 1;
-        }
-        updateSliderPosition();
-    }
-    //Detectar el tamaño de pantalla y ajustar el comportamiento
-    let autoSlide;
-    function adjustSliderForScreenSize(){
-        if(window.innerWidth < 768) {
-            //En móviles, activar auto-slide
-            autoSlide = startAutoSlide();
-            //Detenerlo al hacer hover sobre el slider
-            sliderContainer.addEventListener('mouseenter', () => {
-                clearInterval(autoSlide); // Detener cuando el usuario pone el mouse sobre el slider
-            });
-            sliderContainer.addEventListener('mouseleave', () => {
-               autoSlide = startAutoSlide(); // Reiniciar el autoslide cuando el usuario quite el mouse 
-           });
-        } else { 
-            //En escritorio, desactivar auto-slide y habilitar navegación manual
-            clearInterval(autoSlide);//Detener el atuo-slide si estaba activado
-            //Habilitar botones de navegación manual
-            const prevButton=document.querySelector(".prev");
-            const nextButton=document.querySelector(".next");
-
-            prevButton.addEventListener("click", prevSlide);
-            nextButton.addEventListener("click", nextSlide);
+        if (currentIndex === totalSlides) {
+            setTimeout(() => {
+                slider.style.transition = "none";
+                slider.style.transform = "translateX(0)";
+                currentIndex = 0;
+            }, 1000);
         }
     }
-    
-    // Detectar cambios de tamaño de la pantalla (en caso de que se redimensione)
-window.addEventListener('resize', adjustSliderForScreenSize);
+    setInterval(updateSliderPosition, 4000);
 
-// Ejecutar ajuste inicial cuando se carga la página
-adjustSliderForScreenSize();
-    
-
-
-
+            // 1. Definición del objeto con los servicios
+const servicios = {
+    "Kinesiología traumatológica y deportiva": {
+        texto: "Su objetivo es optimizar la función de los pacientes con patologías musculoesqueléticas, utilizando como medio principal la prescripción de ejercicios. <br>Este espacio está destinado a las siguientes patologías más prevalentes de consultorio externo:",
+        lesiones: [
+            "Cervicalgias y cervicobraquialgias",
+            "Dorsalgias",
+            "Dolor lumbar crónico y lumbociatalgias",
+            "Fracturas de miembro superior (hombro, codo, muñeca)",
+            "Lesiones del manguito rotador",
+            "Inestabilidad de hombro",
+            "Tendinopatía bicipital",
+            "Epicondilalgia",
+            "Tenosinovitis de Quervain",
+            "Fracturas de miembro inferior",
+            "Lesiones de rodilla (Ligamento cruzado anterior y meniscos, esguince de rodilla)",
+            "Esguince de tobillo",
+            "Tendinopatía rotuliana",
+            "Fascitis plantar",
+            "Síndrome femoropatelar",
+            "Fracturas por estrés",
+            "Contusiones musculares"
+        ]
+    },
+    "Rehabilitación Respiratoria": {
+        texto: "La rehabilitacion respiratoria es un tratamiento dirigido a personas con enfermedades respiratorias con el objetivo de reducir su sintomatología (principalmente disnea), mejorar y mantener el máximo grado de independencia en las actividades diarias y disminuir sus exacerbación, optimizando así su calidad de vida. <br><br>Está destinado a pacientes que posean, entre otras, las siguientes patologías:",
+        lesiones: [
+            "Enfermedad Pulmonar Obstructiva Crónica (EPOC)", 
+            "Fibrosis pulmonar", 
+            "Cirugía pulmonar", 
+            "Enfermedades neuromusculares"
+        ]
+    },
+    "Osteopatía": {
+        texto: "La osteopatia es un enfoque holístico, que considera al cuerpo como a una unidad en la que todas sus estructuras están interconectadas y se influyen entre sí, buscando así el verdadero origen de los síntomas. <br><br>El objetivo de esta disciplina es restaurar el equilibrio del cuerpo a través de técnicas manuales para mejorar su función y promover la autocuración.",
+        lesiones: [
+        ]
+    },
+    "Actividad física en el adulto mayor": {
+        texto: "Es un espacio de atención en donde pacientes mayores van a poder mejorar su acondicionamiento físico general a través del aumento de la capacidad aeróbica, el fortalecimiento y la flexibilidad.<br><br> Su objetivo es que el adulto mayor tenga un envejecimiento saludable, fomentando la prevención de enfermedades y la independencia en las actividades de la vida diaria. <br><br>Está destinado a pacientes mayores a 60 años, sedentarios, con factores de riesgo cardiovasculares (hipertensión, dislipemia y sobrepeso) y patologías como diabetes y artrosis, entre otras.",
+        lesiones: [
+        ]
+    },
+    "Microelectrólisis percutánea": {
+        texto: "La microelectrólisis percutánea consiste en la aplicación de una corriente galvánica en el orden de microamperios, en forma percutánea (con una aguja de acupuntura) con el fin de generar, entre otros efectos, analgesia, regeneración del tejido y normalización del pH local. Esta técnica es empleada en lesiones agudas, subagudas y crónicas tales como:",
+        lesiones: [    
+            "Tendinopatía rotuliana y aquiliana", 
+            "Síndrome del supraespinoso", 
+            "Lesiones del Manguito rotador", 
+            "Codo de tenista (epicondilitis)", 
+            "Codo de golfista (epitrocleitis)", 
+            "Pubalgias", 
+            "Fascitis plantar", 
+            "Desgarros", 
+            "Puntos gatillo"
+        ]    
+    }
+};
     // Obtener el modal y el botón de cerrar
     const servicioItems = document.querySelectorAll(".servicio-item");
     const modalTitulo = document.querySelector(".modal-titulo");
     const modal = document.getElementById("modal");
     const modalTexto = document.querySelector(".modal-texto");
     const modalCerrar = document.querySelector(".modal-cerrar");
+
+    servicioItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const titulo = item.getAttribute('data-titulo');
+            const servicio = servicios[titulo];
     
-    
-    servicioItems.forEach(servicio => {
+            modalTitulo.textContent = titulo;
+            modalTexto.innerHTML = `
+                <p>${servicio.texto}</p>
+                <div class="lesiones-lista">
+                    <div class="lesiones-columna">
+                        
+                        <ul>
+                            ${servicio.lesiones.map((lesion) => `<li>${lesion}</li>`).join('')}
+                        </ul>
+                    </div>
+                </div>
+            `;
+            modal.style.display = 'block'; // Muestra el modal
+        });
+    });
+
+/*    servicioItems.forEach(servicio => {
         servicio.addEventListener("click", () => {
             const descripcion = servicio.getAttribute("data-descripcion");
+            modalTexto.textContent = descripcion;
+        modal.classList.add("show"); // Agrega la clase 'show' para mostrar el modal
             const titulo = servicio.getAttribute("data-titulo");
             modalTexto.innerHTML = descripcion;
             modalTitulo.textContent = titulo;
             
         modal.style.display = "flex"; // Agrega la clase 'show' para mostrar el modal
     });
-    });
+    });*/
     modalCerrar.addEventListener("click", ()=>{
+        modal.classList.remove("show"); // Elimina la clase 'show' al cerrar el modal
         modal.style.display="none"; // Elimina la clase 'show' al cerrar el modal
 
         });
+   
+
+
 });
 
+        

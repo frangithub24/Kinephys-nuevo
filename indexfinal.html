@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Kinephys </title>
+    <link rel="stylesheet" href = "/public/css/stylesfinal.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">        
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="public/images/logo-header.png" alt="Kinephys Logo" class="logo-img">
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#quienes-somos" id="quienes-somos-link">Quienes somos</a></li>
+                    <li><a href="#nuestros-servicios" id="nuestros-servicios-link">Nuestros servicios</a></li>
+                    <li><a href="#horarios-contacto" id="horarios-contacto-link">Nuestros horarios</a></li>
+                    <li><a href="#contacto" id="contacto-link">Contacto</a></li>                         
+                </ul>
+            <div class="menu-container">
+         <!-- menú hamburguesa -->
+                <div class="menu-icon" id="menu-toggle">       
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M8 12h8M6 18h12"/></svg>
+                </div>    
+                <div class="menu-back">                    
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" /></svg>                      
+                </div>
+            </div>
+            </nav>
+        </div>  
+    </header>
+
+    <section class="nav-mobile" id="nav-mobile">
+        <ul class="list-mobile">
+            <li><a href="#quienes-somos" id="quienes-somos-link">Quienes somos</a></li>
+            <li><a href="#nuestros-servicios" id="nuestros-servicios-link">Nuestros servicios</a></li>
+            <li><a href="#horarios-contacto" id="horarios-contacto-link">Nuestros horarios</a></li>
+            <li><a href="#contacto" id="contacto-link">Contacto</a></li>                         
+        </ul>
+    </section>
+
+    <div class="heroe-slider">
+        <ul>
+            <li><img src="public/images/entrada-heroe.jpg"></li>
+            <li><img src="public/images/consultorio1.jpg"></li>
+            <li><img src="public/images/consultorio2.jpg"></li>
+            <li><img src="public/images/consultorio3.jpg"></li>
+            <li><img src="public/images/consultorio4.jpg"></li>
+            <li><img src="public/images/consultorio5.jpg"></li>
+            <li><img src="public/images/consultorio6.jpg"></li>
+        </ul>         
+
+    </div>
+    
+    <section id="quienes-somos" class="quienes-somos">
+        <h2>Quienes somos</h2>
+        <p>Somos un consultorio de kinesiología conformado por un grupo de profesionales dedicado a la rehabilitación funcional de distintas patologías. Tenemos el objetivo de mejorar la independencia funcional y la calidad de vida de nuestros pacientes y al mismo tiempo hacerlos sentir cómodos a través de una atención personalizada. 
+        </p>
+        <div class="nosotros">
+            <img src="public/images/quienes-somos-kine1.jpg" alt="kine1">
+            <img src="public/images/quienes-somos-kine2.jpg" alt="kine2">
+        </div>
+    </section>
+    <section id="nuestros-servicios" class="nuestros-servicios">
+        <h2>Nuestros servicios</h2>
+        <div class="servicios">
+            <div class="servicio-item" data-titulo="Kinesiología traumatológica y deportiva"> 
+                <img src="public/images/servicios-kineDeportiva.jpg" alt="Kinesiología traumatológica y deportiva">
+                <div class="servicio-titulo">
+                    <h3>Kinesiología traumatológica y deportiva</h3>
+                </div>
+            </div>
+            <div class="servicio-item" data-titulo="Rehabilitación Respiratoria">
+                <img src="public/images/servicios-rhbRespiratoria.jpg" alt="Rehabilitación respiratoria">
+                <div class="servicio-titulo">
+                    <h3>Rehabilitación Respiratoria</h3>
+                </div>
+            </div>
+            <div class="servicio-item" data-titulo="Osteopatía">
+                <img src="public/images/servicios-osteopatia.jpg" alt="Osteopatía">
+                <div class="servicio-titulo">
+                    <h3>Osteopatía</h3>
+                </div>
+            </div>
+            <div class="servicio-item" data-titulo="Actividad física en el adulto mayor">
+                <img src="public/images/servicios-adultoMayor.jpg" alt="Actividad física en el adulto mayor">
+                <div class="servicio-titulo">
+                    <h3>Actividad física en el adulto mayor</h3>
+                </div>
+            </div>
+            <div class="servicio-item" data-titulo="Microelectrólisis percutánea">
+                <img src="public/images/servicios-mep.jpg" alt="Microelectrólisis percutánea">
+                <div class="servicio-titulo">
+                    <h3>Microelectrólisis percutánea</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modal -->
+    <section class="modal" id="modal">
+        <div class="modal-content">
+            <h2 class="modal-titulo"></h2> 
+            <div class="modal-texto"></div>        
+            <button class="modal-boton">CONSULTAR</button>
+            <span class="modal-cerrar">&times;</span>
+        </div>
+    </section>
+    <section id="horarios-contacto" class="horarios-contacto">
+        <div class="nuestros-horarios">
+            <h2>Nuestros horarios</h2>
+            <ul>
+                <li><strong>Osteopatía:</strong> 
+                <div style="margin-top:5px">Lunes a Jueves de 13 a 16 horas.</div></li>
+                <li><strong>Otras especialidades: </strong> 
+                <div style="margin-top:5px">Lunes y Miércoles de 9 a 12 horas.</div>
+                <div style="margin-top:5px">Lunes a Jueves de 14 a 19 horas.</div></li>
+            </ul>     
+        <h2>Información de contacto</h2>
+        <div class="contact-info">
+            <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i> 
+                <span>Aristóbulo del Valle 122 - Lanús Oeste</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone-alt"></i> 
+                    <span>+54 9 11 5369-9799</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i> 
+                    <span>kinephys.kinesiologia@gmail.com</span>                              
+                </div>
+            </div>
+        </div>
+        <section id="contacto" class="contacto">
+            <h2>Contacto</h2>
+            <p> Envianos tu consulta: </p>
+            <form id="contacto-form">
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <label for="nombre" class="visually-hidden">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+
+                <label for="email" class="visually-hidden">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+
+                <label for="telefono" class="visually-hidden">Teléfono:</label>
+                <input type="tel" id="telefono" placeholder="Teléfono" name="telefono">
+
+                <label for="mensaje" class="visually-hidden">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="8" placeholder="Mensaje" required></textarea>
+
+                <div class="boton-enviar">
+                    <button type="submit">ENVIAR MENSAJE</button>
+                </div>     
+            </form>
+        </div>
+        </section>
+    </section>
+    
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3280.018561180611!2d-58.39349253718029!3d-34.70471177995896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccd21ee171cad%3A0x8c157eb66660b6a9!2sArist%C3%B3bulo%20del%20Valle%20122%2C%20B1824NBF%20Lan%C3%BAs%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1727789467530!5m2!1ses!2sar" height="400" style="border:0; width: 100%" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <a href="https://wa.me/5491153699799?text=¡Hola!%20Quisiera%20más%20información%20sobre%20sus%20servicios." target="_"> <!-- Avisa que el enlace se abre en una nueva pestaña -->
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" id="whatsapp-icon" alt="WhatsApp"></a>
+
+    <footer>
+    <div class = "footer-content">
+        <p>© KINEPHYS 2024. All Rights Reserved.</p>
+        <p>Web Design by Francisco Esperón</p>
+    <div class="social-icons">
+        <a href="https://www.instagram.com" target="_blank"> 
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram">
+        </a>
+    </div>
+    </div>
+    </footer>
+    <script src="/js/script.js"></script> 
+</body>
+</html>
+
