@@ -253,6 +253,21 @@ p {
     animation: scale-up 0.5s ease-in-out forwards;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
 }
+.modal-content a {
+    background-color: #FF6D00;
+    position:absolute;
+    right:20px;
+    bottom:10px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: auto;
+    height: auto;
+    font-size: 18px;
+    text-decoration:none;
+    padding:10px;
+}
 .modal-texto p { 
     font-size:12px;
     text-align:start;
@@ -263,19 +278,6 @@ p {
 .modal-texto ul {
     font-size:12px;
 } 
-.modal-boton{
-    position:absolute;
-    right:20px;
-    bottom:10px;
-    background-color: #FF6D00;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    width: auto;
-    padding:10px;
-    font-size: 12px;
-}
 .modal-boton:hover {
     transform: scale(1.05);
 }
@@ -360,13 +362,13 @@ p {
 .contacto h2,.contacto p{
     text-align:left;
 }
-#contacto-form { /*# para llamar ID, que son únicos, en cambio el . es para llamar a una clase, que puede haber varias */
+.contacto-form { /*# para llamar ID, que son únicos, en cambio el . es para llamar a una clase, que puede haber varias */
     font-family: "Montserrat", sans-serif;    
     margin-left:10px;
 
 }
-#contacto-form input,
-#contacto-form textarea {
+.contacto-form input,
+.contacto-form textarea {
     font-size:14px;
     padding:8px;
     margin-bottom: 10px; /* Espacio entre los campos */
@@ -376,7 +378,7 @@ p {
 }
 
 
-#contacto-form button {
+.contacto-form button {
     padding: 10px;
     margin-top: 20px; /*separación entre formulario y botón de enviar mensaje*/
     background-color:  #FF6D00;
@@ -394,8 +396,8 @@ p {
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
 }
-#contacto-form input::placeholder,
-#contacto-form textarea::placeholder {
+.contacto-form input::placeholder,
+.contacto-form textarea::placeholder {
     color: black; /* Cambia el color del texto */
     font-size:14px;
 }
@@ -676,18 +678,21 @@ p {
     animation: scale-up 0.5s ease-in-out forwards;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
 } 
-.modal-boton{
+.modal-content a {
+    background-color: #FF6D00;
     position:absolute;
     right:20px;
     bottom:10px;
-    background-color: #FF6D00;
     color: white;
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    width: 400px;
-    height: 60px;
+    width: auto;
+    height: auto;
     font-size: 18px;
+    text-decoration:none;
+
+
 }
 .modal-boton:hover {
     transform: scale(1.05);
@@ -734,14 +739,14 @@ p {
     padding:5px;
 }
 
-#contacto-form { /*# para llamar ID, que son únicos, en cambio el . es para llamar a una clase, que puede haber varias */
+.contacto-form { /*# para llamar ID, que son únicos, en cambio el . es para llamar a una clase, que puede haber varias */
     max-width: 500px; /*ancho máximo de los elemntos del form*/
     font-family: "Montserrat", sans-serif;
     padding:10px;
     margin-left:60px;
 }
 
-#contacto-form input {
+.contacto-form input {
     width:400px;
     height:50px;
     border-radius:10px;
@@ -749,7 +754,7 @@ p {
     padding-left:10px;
     font-size:16px;
 }
-#contacto-form textarea {
+.contacto-form textarea {
     width:400px;
     border-radius:10px;
     padding-left:10px;
@@ -757,7 +762,7 @@ p {
     font-size:16px;
 }
 
-#contacto-form button {
+.contacto-form button {
     padding: 10px;
     margin-top: 20px; /*separación entre formulario y botón de enviar mensaje*/
     background-color:  #FF6D00;
@@ -769,7 +774,7 @@ p {
     height:50px;
     font-size:18px;   
 }
-#contacto-form button:hover {
+.contacto-form button:hover {
     transform: scale(1.05); /*se agranda el servicio cuando paso el mouse*/
 }
 .visually-hidden {
