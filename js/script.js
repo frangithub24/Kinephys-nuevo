@@ -29,6 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
             behavior: 'smooth', // Desplazamiento suave 
             block: "start"         
         });
+
+        console.log("Desplazamiento a Quienes Somos");
+
         navMobile.classList.remove("open"); // Cierra el menú hamburguesa
         hamburgerButton.style.display = 'block'; // Vuelve a mostrar el botón hamburguesa
         backButton.style.display = 'none'; // Oculta el botón de cerrar 
@@ -42,7 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault(); //evita el comportamiento predeterminado del link
         nuestrosServiciosSection.scrollIntoView({
             behavior: 'smooth', // Desplazamiento suave 
-            block: "start"         
+            block: "start",
+         
         });
 
         navMobile.classList.remove("open"); // Cierra el menú hamburguesa

@@ -70,6 +70,16 @@ header {
 .nav-list {
     display:none;
 }
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
 
 /* Ocultar el menú móvil por defecto */
 .nav-mobile {
@@ -82,7 +92,8 @@ header {
     z-index: 10;
     padding: 20px 0;
     text-align: center;
-    transition: max-height 0.5s ease-out; /*transición suave */
+    opacity: 0;
+    transform: translateY(-20px); /* Ajusta según el efecto deseado */
 }
 .nav-mobile-list {
     width:100%;    
@@ -92,8 +103,10 @@ header {
     display: block;
     max-height: 500px; /*establece el alto cuando se despliega el menú*/
     top:120px;
-}
+    opacity:1;
+    animation: slideDown 0.5s ease forwards;
 
+}
 .list-mobile {
     width:100%;
     display:flex;
@@ -529,7 +542,7 @@ body {
 h2 {
     margin-bottom:25px;
     margin-top:30px;
-    font-size:26px;
+    font-size:20px;
     text-align:center;
 }
 p {
@@ -605,7 +618,8 @@ p {
     align-items:center; /*alinea en el centro a los textos del titulo*/
     justify-content:center; /*alinea en el centro a los textos del titulo en sentido vertical*/
     margin-top: -20px; /*separa un poco entre foto y titulo*/
-    flex-grow:1 /* Hace que el título llene el espacio necesario*/
+    flex-grow:1; /* Hace que el título llene el espacio necesario*/
+    font-size:16px;
 }
 .horarios-contacto{
     background-color:rgb(245,245,245);
@@ -622,11 +636,11 @@ p {
 
 }
 .nuestros-horarios h2{
-    font-size:24px;
+    font-size:20px;
     margin-bottom:30px;
 }
 .nuestros-horarios ul {
-    font-size:18px;
+    font-size:14px;
     margin-left:60px;
 }
 .nuestros-horarios li {
