@@ -17,8 +17,7 @@ body {
     font-family: "Montserrat", sans-serif;
     background-color:white;
     color:black;
-    overflow-x:hidden;
-    width: 100%;
+    overflow-x:hidden;    
 }
 
 header {
@@ -41,7 +40,7 @@ header {
     max-width:100%;
 }
 .logo-img {
-    height:110px;
+    height:100px;
     width:auto;
     margin:10px;
     padding: 15px 10px;
@@ -60,8 +59,7 @@ header {
     cursor: pointer;
     margin: 50px 0px;
 }
-.nav {
-    display:;   
+.nav {   
     color:black; 
     position:absolute;
     right:20px;
@@ -229,6 +227,7 @@ p {
     width: 90%; /* Aseguramos que el contenedor ocupe el 100% del ancho */
     position:relative;
     left:20px;
+    height:400px;
 }
 .servicio-item img {
     width: 100%; /* Ancho máximo de la imagen igual al contenedor */
@@ -264,7 +263,7 @@ p {
     padding-bottom:60px;
     text-align: center;
     animation: scale-up 0.5s ease-in-out forwards;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 .modal-content a {
     background-color: #FF6D00;
@@ -294,6 +293,7 @@ p {
 .modal-boton:hover {
     transform: scale(1.05);
 }
+
 .modal-cerrar{
     font-size:60px;
     position: absolute; /* Posicionamiento absoluto */
@@ -339,9 +339,16 @@ p {
     height:850px;
     margin-top:50px;
 }
+
 .nuestros-horarios {
     margin-left:60px;
     transition:transform 0.3s ease;
+}
+.contact-info {
+    margin-left:60px;
+}
+.contact-info h2 {
+    text-align:left;
 }
 .nuestros-horarios h2{
     font-size:20px;
@@ -370,14 +377,23 @@ p {
 .contacto {
     margin-left:60px;
     margin-bottom:100px;
+    display:flex;
+    flex-direction:column;
+    
+    padding-right:200px;
 }
 
-.contacto h2,.contacto p{
+.contacto h2,.contacto p {
+    width:190%;
     text-align:left;
+}
+.contacto p {
+    
+    padding-bottom:10px;
 }
 .contacto-form { /*# para llamar ID, que son únicos, en cambio el . es para llamar a una clase, que puede haber varias */
     font-family: "Montserrat", sans-serif;    
-    margin-left:10px;
+    margin-left:1px;
 
 }
 .contacto-form input,
@@ -386,14 +402,14 @@ p {
     padding:8px;
     margin-bottom: 10px; /* Espacio entre los campos */
     width: 900%; /* Reduce el ancho en general */
-    max-width: 300px; /* Límite de ancho máximo en pantallas grandes */
+    max-width: 280px; /* Límite de ancho máximo en pantallas grandes */
     border-radius: 10px;  
 }
 
 
 .contacto-form button {
-    padding: 10px;
-    margin-top: 20px; /*separación entre formulario y botón de enviar mensaje*/
+    padding: 0px 10px;
+    margin-top: 10px; /*separación entre formulario y botón de enviar mensaje*/
     background-color:  #FF6D00;
     color: white;
     border: none;
@@ -417,11 +433,11 @@ p {
 
 #whatsapp-icon{
     position:fixed;
-    width:40px;
-    height:40px;
+    width:30px;
+    height:30px;
     cursor:pointer;
     bottom:20px;
-    right:50px;
+    right:20px;
     z-index:1000;
     }
 footer {
@@ -460,384 +476,392 @@ footer {
 /*----Desktop------*/
 
 @media (min-width: 768px) {
-header {
-    padding:10px 15px;
-    height:170px;
+    body {
+        margin:0;
+        padding:0;
+        font-family: "Arial", sans-serif;
+        background-color:white;
+        color:black;
+        overflow-x:hidden;
+        width:1800px;
+    }
+
+    header {
+    position:relative;
+    padding:20px 15px;
+    height:120px;
     background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
     z-index:1000;
-}
-.menu-container {
+    width:100%;
+    height:auto;
+    }
+
+    .menu-container {
     display:none;
-}
-body {
-    margin:0;
-    padding:0;
-    font-family: "Arial", sans-serif;
-    background-color:white;
-    color:black;
-    overflow-x:hidden;
-}
-.container {
+    }
+
+    .container {
     gap: 6rem; /*Distancia entre el logo y el menú*/
     display:flex;
     flex-direction:row;
     justify-content:space-between;
     align-items:center;
-}
-.logo-img { /*tamaño del logo*/
-    height:140px;
+    }
+
+    .logo-img { /*tamaño del logo*/
+    height:110px;
     width:auto;
     margin: 30px 20px;
     margin-top:0px;    
-}
-.nav-list {
-    list-style: none; /*saco las viñetas*/
-    display:flex;
-    flex-direction:row; /*una al lado de la otra*/
-    gap: 80px; /* separo entre cada una*/
-    padding:50px 100px;
-    font-size:20px;
-}
-.nav-mobile {
-    display:none;
-}
-/*estilos de nav-list (quienes somos, contacto, etc...) pongo color negro y quito subrayado*/
-.nav-list a{
-    color:black;
-    text-decoration:none;
-}
-.nav-list li a:hover {
-/* Color al pasar el mouse (cámbialo al color que desees) */
-    color:#FF6D00; 
-  }
-.heroe-slider {
-    position:relative;
-    width:100%;
-    height:auto;        
-    overflow:hidden;
-    margin-bottom:-100px;
-}
-
-.heroe-slider ul {
-    display: flex;
-    padding: 0;
-    margin: 0;
-    width: 100%; /*para que no se solapen imagenes*/
-    transition: transform 2s ease-in-out; /* Transición para mover las imágenes */
-    
-}
-.heroe-slider li {
-    width:100%;
-    position:relative;
-    flex-shrink:0;
-}
-.heroe-slider img {
-    width:100%;
-    height:70vh;
-    object-fit:cover;
-    opacity:0.8;
-}    
-
-h2 {
-    margin-bottom:25px;
-    margin-top:30px;
-    font-size:20px;
-    text-align:center;
-}
-p {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-size:18px;
-    padding: 8px;
-    margin-left:60px;
-    text-align:left;
-
-}
-
-.quienes-somos {
-    flex-direction:row;
-    background-color: rgba(255, 255, 255, 0.884);
-    padding: 150px 10px;
-    margin-top:10px; /*para que cuando toco quienes somos en el menú hamburguesa y se desplaza hacia la sección no lleguen a verse las opciones del nav-mobile*/
-    text-align:center;
-    margin:20px;
-}
-.nosotros{
-    display:flex;
-    flex-direction:row;
-
-}
-.nosotros img {
-    padding:20px;
-    height:90vh;
-    width:100vh;
-    filter:grayscale(20%);    
-}
-.nuestros-servicios {
-    margin-top:-150px;
-}
-.servicios {
-    display: flex;
-    flex-direction:row;
-    justify-content: space-between; /* Espacio entre los elementos */
-    gap: 20px; /* Espaciado entre los servicios */
-    flex-wrap: wrap; /* Permite que se ajusten en pantallas más pequeñas */
-    align-items:stretch;
-    cursor:pointer;
-    margin-top:10px;
-    margin-right:px;
-}
-.nuestros-servicios img {
-    opacity:0.8; /*reduzco la opacidad de la imagen de fono*/
-    padding:20px; /*dejo espacio debajo de cada imagen*/
-    
-}
-.servicio-item {
-    padding: 10px;
-    flex: 1; /* Los elementos ocuparán el mismo espacio*/ 
-    max-width: 25%; /* Limita el ancho máximo de cada servicio*/ 
-    text-align: center;
-    border: 2px solid #ccc; /* Borde opcional para visualización*/
-    min-height: 400px; /* Establece una altura mínima para que todos tengan el mismo alto*/ 
-    border-radius:10px;
-    transition:transform 0.3s ease;
-}
-.servicio-item:hover {
-    transform: scale(1.05); /*se agranda el servicio cuando paso el mouse*/
-}
-.servicio-item img {
-    width: 100%; /* Ancho máximo de la imagen igual al contenedor */
-    height: 300px; /* Fija la altura de todas las imágenes */
-    object-fit: cover; /* Asegura que las imágenes se ajusten sin distorsión */
-    border-radius: 10px; /* Bordes redondeados (opcional) */
-}
-.servicio-titulo {
-    display:flex;
-    border-radius:10px;
-    align-items:center; /*alinea en el centro a los textos del titulo*/
-    justify-content:center; /*alinea en el centro a los textos del titulo en sentido vertical*/
-    margin-top: -20px; /*separa un poco entre foto y titulo*/
-    flex-grow:1; /* Hace que el título llene el espacio necesario*/
-    font-size:16px;
-}
-.horarios-contacto{
-    background-color:rgb(245,245,245);
-    width:100%;
-    display:flex;
-    flex-direction:row;
-    gap:250px;
-    height:630px;
-    margin-top:50px;
-}
-.nuestros-horarios {
-    margin-left:60px;
-    transition:transform 0.3s ease;
-
-}
-.nuestros-horarios h2{
-    font-size:20px;
-    margin-bottom:30px;
-}
-.nuestros-horarios ul {
-    font-size:14px;
-    margin-left:60px;
-}
-.nuestros-horarios li {
-    margin-bottom:20px;
-    list-style:none;
-}
-.nuestros-horarios p {
-    font-size:18px;
-    margin-bottom:5px;
-}
-.nuestros-horarios h2 {
-    text-align:left;
-}
-.info-item{
-   font-size:18px; 
-   margin-bottom:10px;
-   margin-left:50px;
-}
-.contacto {
-    display:flex;
-    flex-direction:column;
-}
-
-.modal {
-    position:fixed;
-    top:-50px;
-    left:0;
-    width:100%;
-    height:100%;
-    display:none;
-    align-items:center;
-    justify-content:center;
-    background-color: rgba(0, 0, 0, 0.2);
-    z-index:1000;
-    transition: opacity 0.3s ease;
-}
-
-.modal-titulo {
-    font-size:18px;
-    padding:25px;
-}
-.modal-content {
-    background-color:white;
-    margin: 5% auto;
-    border-radius: 10px;
-    max-width:1000px;
-    height:auto;
-    text-align: center;
-    animation: scale-up 0.5s ease-in-out forwards;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
-} 
-.modal-content a {
-    background-color: #FF6D00;
-    position:absolute;
-    right:20px;
-    bottom:10px;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    width: auto;
-    height: auto;
-    font-size: 18px;
-    text-decoration:none;
-
-
-}
-.modal-boton:hover {
-    transform: scale(1.05);
-}
-.modal-cerrar{
-    font-size:60px;
-    position: absolute; /* Posicionamiento absoluto */
-    top: 10px; /* Espacio desde la parte superior */
-    right: 20px; /* Espacio desde la derecha */
-    cursor: pointer; /* Cambia el cursor al pasar por encima */
-    
-}
-.modal-cerrar:hover{
-    color:#FF6D00;
-    
-}
-@keyframes scale-up {
-    from {
-        transform: scale(0.8);
-        opacity: 0;
     }
-    to {
-        transform: scale(1);
-        opacity: 1;
+    .nav-list {
+        list-style: none; /*saco las viñetas*/
+        display:flex;
+        flex-direction:row; /*una al lado de la otra*/
+        gap: 80px; /* separo entre cada una*/
+        padding:50px 100px;
+        font-size:20px;
     }
-}
+    .nav-mobile {
+        display:none;
+    }
+    /*estilos de nav-list (quienes somos, contacto, etc...) pongo color negro y quito subrayado*/
+    .nav-list a{
+        color:black;
+        text-decoration:none;
+    }
+    .nav-list li a:hover {
+    /* Color al pasar el mouse (cámbialo al color que desees) */
+        color:#FF6D00; 
+    }
+    .heroe-slider {
+        width:100%;
+        height:auto;        
+        overflow:hidden;
+        margin-bottom:-100px;
+    }
 
-.modal-texto p, .modal-texto ul {
-    font-size:16px;
-}
+    .heroe-slider ul {
+        display: flex;
+        padding: 0;
+        margin: 0;
+        width: 100%; /*para que no se solapen imagenes*/
+        transition: transform 2s ease-in-out; /* Transición para mover las imágenes */
+        
+    }
+    .heroe-slider li {
+        width:100%;
+        position:relative;
+        flex-shrink:0;
+    }
+    .heroe-slider img {
+        width:100%;
+        height:70vh;
+        object-fit:cover;
+        opacity:0.8;
+    }    
 
-.modal-texto ul {
-    padding-left: 20px;
-    display:flex;
-    flex-direction:column;
-    align-items:start;
-    margin-left:30px;
-}
+    h2 {
+        margin-bottom:25px;
+        margin-top:30px;
+        font-size:32px;
+        text-align:center;
+    }
+    p {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size:18px;
+        padding: 8px;
+        margin-left:60px;
+        text-align:center;
+    }
+    .quienes-somos {
+        flex-direction:row;
+        background-color: rgba(255, 255, 255, 0.884);
+        padding: 150px 10px;
+        margin-top:10px; /*para que cuando toco quienes somos en el menú hamburguesa y se desplaza hacia la sección no lleguen a verse las opciones del nav-mobile*/
+        margin:20px;
+        max-width:1600px;
+    }
+    .nosotros{
+        display:flex;
+        flex-direction:row;
+    }
+    .nosotros img {
+        padding:20px;
+        height:auto;
+        max-width:800px;
+        filter:grayscale(20%);    
+    }
+    .nuestros-servicios {
+        margin-top:-150px;
+        
+    }
+    .servicios {
+        display: flex;
+        flex-direction:row;
+        justify-content: center; /* Espacio entre los elementos */
+        gap: 20px; /* Espaciado entre los servicios */
+        flex-wrap: wrap; /*uso wrap en el contenedor para que los elementos se dividan en filas, se envuelven an la fila siguiente cuando ya no hay espacio en la actual*/
+        align-items:stretch;
+        cursor:pointer;
+        margin-top:10px;
+        margin-right:px;
+    }
+    .nuestros-servicios img {
+        opacity:0.8; /*reduzco la opacidad de la imagen de fono*/
+        padding:20px; /*dejo espacio debajo de cada imagen*/
+        
+    }
+    .servicio-item {
+        padding: 10px;
+        flex: 1; /* Los elementos ocuparán el mismo espacio*/ 
+        max-width: 35%; /* Limita el ancho máximo de cada servicio*/ 
+        text-align: center;
+        border: 2px solid #ccc; /* Borde opcional para visualización*/
+        min-height: 400px; /* Establece una altura mínima para que todos tengan el mismo alto*/ 
+        border-radius:10px;
+        transition:transform 0.3s ease;
+        flex: 1 1 25%; /* Ocupa aproximadamente el 25% del ancho, para dos elementos en una fila */
+        /*el primer 1 es de flex-grow: puede crecer si hay espacio extra en el contenedor. Como todos tienen 1, crecerán en la misma proporción. el segundo 1 es shrink: permite que se encoja cuando hay espacio limitado*/
+        max-width: 25%; /* Limita el ancho máximo para mantener dos elementos por fila */
+        box-sizing: border-box; /*Asegura que el padding no expanda el tamaño del elemento*/
+    }
+    .servicio-item img {
+        width: 100%; /* Ancho máximo de la imagen igual al contenedor */
+        height: 300px; /* Fija la altura de todas las imágenes */
+        object-fit: cover; /* Asegura que las imágenes se ajusten sin distorsión */
+        border-radius: 10px; /* Bordes redondeados (opcional) */
+    }
+    .servicio-titulo {
+        display:flex;
+        border-radius:10px;
+        align-items:center; /*alinea en el centro a los textos del titulo*/
+        justify-content:center; /*alinea en el centro a los textos del titulo en sentido vertical*/
+        margin-top: -20px; /*separa un poco entre foto y titulo*/
+        flex-grow:1; /* Hace que el título llene el espacio necesario*/
+        font-size:16px;
+    }
+    .horarios-contacto{
+        background-color:rgb(245,245,245);
+        width:100%;
+        display:flex;
+        flex-direction:row;
+        height:630px;
+        margin-top:50px;
+    }
+    .nuestros-horarios {
+        margin-left:60px;
+        transition:transform 0.3s ease;
 
-.modal-texto ul li {
-    list-style-type: disc;
-    margin-left: 0px;
-    list-style-position: inside;
-    padding:5px;
-}
-
-.contacto-form { /*# para llamar ID, que son únicos, en cambio el . es para llamar a una clase, que puede haber varias */
-    max-width: 500px; /*ancho máximo de los elemntos del form*/
-    font-family: "Montserrat", sans-serif;
-    padding:10px;
-    margin-left:60px;
-}
-
-.contacto-form input {
-    width:400px;
-    height:50px;
-    border-radius:10px;
+    }
+    .nuestros-horarios h2{
+        font-size:32px;
+        margin-bottom:30px;
+    }
+    .nuestros-horarios ul {
+        font-size:18px;
+        margin-left:60px;
+    }
+    .nuestros-horarios li {
+        margin-bottom:20px;
+        list-style:none;
+    }
+    .nuestros-horarios p {
+        font-size:18px;
+        margin-bottom:5px;
+    }
+    .nuestros-horarios h2 {
+        text-align:left;
+    }
+    .info-item{
+    font-size:18px; 
     margin-bottom:10px;
-    padding-left:10px;
-    font-size:16px;
-}
-.contacto-form textarea {
-    width:400px;
-    border-radius:10px;
-    padding-left:10px;
-    padding-top:10px;
-    font-size:16px;
-}
-
-.contacto-form button {
-    padding: 10px;
-    margin-top: 20px; /*separación entre formulario y botón de enviar mensaje*/
-    background-color:  #FF6D00;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    width:300px;
-    height:50px;
-    font-size:18px;   
-}
-.contacto-form button:hover {
-    transform: scale(1.05); /*se agranda el servicio cuando paso el mouse*/
-}
-.visually-hidden {
-    position:absolute;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-}
-#contacto-form input::placeholder,
-#contacto-form textarea::placeholder {
-    color: black; /* Cambia el color del texto */
-    font-size:16px;
-}
-
-#whatsapp-icon{
-    position:fixed;
-    width:40px;
-    height:40px;
-    cursor:pointer;
-    bottom:20px;
-    right:50px;
-    z-index:1000;
+    margin-left:50px;
     }
-footer {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 50px;
- }
- footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 10px;
-    position: relative;
-    width: 100%;
-    bottom: 0;
-}
-.footer-content {
-    flex-direction: column;
-}
+    .horarios-direccion {
+        display:flex;
+        flex-direction:column;
+        gap:80px;
+        width:50%;
+        align-items:center;
+    }
+    .contacto {
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        width:50%;
+        padding-right:200px;
+    }
 
-.social-icons {
-    margin-top: 10px;
-    margin: 0 10px;
-}   
-.social-icons img {
-    width:  24px;
-    height: 24px;
-    margin-left:60px;
-}
+    .modal {
+        position:fixed;
+        top:-50px;
+        left:0;
+        width:100%;
+        height:100%;
+        display:none;
+        align-items:center;
+        justify-content:center;
+        background-color: rgba(0, 0, 0, 0.2);
+        z-index:1000;
+        transition: opacity 0.3s ease;
+    }
+
+    .modal-titulo {
+        font-size:18px;
+        padding:25px;
+    }
+    .modal-content {
+        background-color:white;
+        margin: 5% auto;
+        border-radius: 10px;
+        max-width:1000px;
+        height:auto;
+        text-align: center;
+        animation: scale-up 0.5s ease-in-out forwards;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    } 
+    .modal-content a {
+        background-color: #FF6D00;
+        position: absolute;
+        right:20px;
+        bottom:10px;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        width: auto;
+        height: auto;
+        font-size: 18px;
+        text-decoration: none;
+    }
+    .modal-boton:hover {
+        transform: scale(1.05);
+    }
+    .modal-cerrar{
+        font-size:60px;
+        position: absolute; /* Posicionamiento absoluto */
+        top: 10px; /* Espacio desde la parte superior */
+        right: 20px; /* Espacio desde la derecha */
+        cursor: pointer; /* Cambia el cursor al pasar por encima */    
+    }
+    .modal-cerrar:hover{
+        color:#FF6D00;
+        
+    }
+    @keyframes scale-up {
+        from {
+            transform: scale(0.8);
+            opacity: 0;
+        }
+        to {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    .modal-texto p, .modal-texto ul {
+        font-size:16px;
+    }
+
+    .modal-texto ul {
+        padding-left: 20px;
+        display:flex;
+        flex-direction:column;
+        align-items:start;
+        margin-left:30px;
+    }
+
+    .modal-texto ul li {
+        list-style-type: disc;
+        margin-left: 0px;
+        list-style-position: inside;
+        padding:5px;
+    }
+
+    .contacto-form { /*# para llamar ID, que son únicos, en cambio el . es para llamar a una clase, que puede haber varias */
+        max-width: 600px; /*ancho máximo de los elemntos del form*/
+        font-family: "Montserrat", sans-serif;
+        padding:10px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contacto-form input,
+    .contacto-form textarea {
+        width:100% !important; /* Intenta forzar el ancho completo */
+        max-width:none; /* Asegura que no haya un max-width limitante */
+        height:50px;
+        border-radius:10px;
+        margin-bottom:10px;
+        padding-left:10px;
+        font-size:16px;
+        box-sizing:border-box;
+    }
+    .contacto-form textarea {
+        height:auto;
+        padding-top:10px;
+    }
+    .contacto-form button {
+        padding: 10px;
+        margin-top: 20px; /*separación entre formulario y botón de enviar mensaje*/
+        background-color:  #FF6D00;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        width:300px;
+        height:50px;
+        font-size:18px;   
+    }
+    .contacto-form button:hover {
+        transform: scale(1.05); /*se agranda el servicio cuando paso el mouse*/
+    }
+    .visually-hidden {
+        position:absolute;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+    }
+    #contacto-form input::placeholder,
+    #contacto-form textarea::placeholder {
+        color: black; /* Cambia el color del texto */
+        font-size:16px;
+    }
+
+    #whatsapp-icon{
+        position:fixed;
+        width:40px;
+        height:40px;
+        cursor:pointer;
+        bottom:20px;
+        right:50px;
+        z-index:1000;
+    }
+    footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 50px;
+        background-color: #333;
+        color: #fff;
+        padding: 20px 10px;
+        position: relative;
+        width: 100%;
+        bottom: 0;
+    }
+    .footer-content {
+        flex-direction: column;
+    }
+    .social-icons {
+        margin-top: 10px;
+        margin: 0 10px;
+    }   
+    .social-icons img {
+        width:  24px;
+        height: 24px;
+        margin-left:60px;
+    }
 
 }
-
-  

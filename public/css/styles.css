@@ -5,7 +5,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
-
 }
 
 html {
@@ -250,8 +249,6 @@ h2 {
     margin-top: -20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar el recuadro */
     }
-
-
 .servicios {
     display: flex;
     flex-direction: column;
@@ -267,17 +264,15 @@ h2 {
     align-items: center;
     width: 100%; /* Aseguramos que el contenedor ocupe el 100% del ancho */
 }
-
 .servicios div {
     position:relative;
 }
-
 .servicio-item img {
     width:100%; /* Mantiene la imagen al 100% del contenedor */
     object-fit: cover; /* Asegura que la imagen cubra el espacio sin deformarse */
     height:auto;    
 }
-.
+
 
 .modal {
     display: none; /* Oculto por defecto */
