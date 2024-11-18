@@ -159,3 +159,27 @@ Función updateSliderPosition: Mueve el slider hacia la izquierda y controla las
 Reinicio al final: Vuelve a la primera diapositiva sin transición para que parezca fluido.
 Intervalo: Controla la frecuencia con la que se cambian las diapositivas.
 Si tienes alguna pregunta sobre alguna parte específica o si quieres profundizar en un aspecto particular, ¡hazmelo saber!
+
+
+
+
+Desktop:
+Títulos más grandes (32px?)
+Fotos de quienes somos: 
+.nosotros img: width automatico y display flex
+Nosotros. 
+flex-wrap: wrap.
+display:flex;
+en img: max-width:800px;
+
+servicios lo mismo: hacer un buen manejo de flex, para que cuando lo achico se acomode. 
+justify-content: center.
+servicio-item:
+max-width:35px.
+height:700px;
+
+logo: en mobile está grande: 100
+en desktop: 110px. Centrarlo verticalmente
+pasar header a 120px de height (tenía 140px)
+
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/#aa-background

@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
    //Función para deslizar a la sección quienes somos
-    const quienesSomosLink = document.querySelector("#quienes-somos-link");
+    const quienesSomosLink = document.querySelector("#quienes-somos-mobile-link");
     const quienesSomosSection = document.querySelector("#quienes-somos");
     
     quienesSomosLink.addEventListener("click", (e) => {
@@ -29,14 +29,14 @@ document.addEventListener('DOMContentLoaded', () => {
             behavior: 'smooth', // Desplazamiento suave 
             block: "start"         
         });
-        
+       
         navMobile.classList.remove("open"); // Cierra el menú hamburguesa
         hamburgerButton.style.display = 'block'; // Vuelve a mostrar el botón hamburguesa
         backButton.style.display = 'none'; // Oculta el botón de cerrar 
     });
 
     //Función para deslizar a la sección nuestros servicios
-    const nuestrosServiciosLink = document.querySelector("#nuestros-servicios-link");
+    const nuestrosServiciosLink = document.querySelector("#nuestros-servicios-mobile-link");
     const nuestrosServiciosSection = document.querySelector("#nuestros-servicios");
 
     nuestrosServiciosLink.addEventListener("click", (e) => {
@@ -53,8 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
     //Función para deslizar a la sección nuestros horarios
-    const horariosLink = document.querySelector("#horarios-contacto-link");
+    const horariosLink = document.querySelector("#horarios-contacto-mobile-link");
     const horariosSection = document.querySelector("#horarios-contacto");
+    
 
     horariosLink.addEventListener("click", (e) => {
         e.preventDefault(); //evita el comportamiento predeterminado del link
@@ -68,6 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
         hamburgerButton.style.display = 'block'; // Vuelve a mostrar el botón hamburguesa
         backButton.style.display = 'none'; // Oculta el botón de cerrar
     });
+
 
 //selecciono los elementos del slider//
     const slider = document.querySelector(".heroe-slider ul");
