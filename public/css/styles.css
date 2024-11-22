@@ -9,22 +9,25 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top:10px;
 }
 
 body {
     margin:0;
-    padding:0;
+    padding-top:0px;
     font-family: "Montserrat", sans-serif;
     background-color:white;
     color:black;
-    overflow-x:hidden;
+    overflow-x:hidden;    
 }
 
 header {
-    background-color: rgb(245,245,245);
+    background-color: white;
     width:100%;
-    padding:10px 15px;
-    height:120px;   
+    padding:10px 20px;
+    height:auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    /* sombra ligera debajo */   
 }
 
 /*estilos del contenedor que incluye al logo y el navbar*/
@@ -35,15 +38,12 @@ header {
     align-items:flex-start;
     margin-top:-16px;
     padding:0 8px;
-}
-.logo {
-    display:flex;
-    align-items:center
+    max-width:100%;
 }
 .logo-img {
-    height:auto;
-    width:150px;
-    margin:0;
+    height:100px;
+    width:auto;
+    margin:10px;
     padding: 15px 10px;
 }
 /*características del menu-icon, que contiene al hamburguesa: disposición de las líneas*/
@@ -52,48 +52,48 @@ header {
     flex-direction:row;
     width:40px;
 }
-
 .menu-icon {
-    display: flex;
-    flex-direction: column;
     cursor: pointer;
-    height: 50px;
-    width:50px;
-    background-color: #000;
-    margin: 4px 0;
+    margin: 50px 0px;   
 }
-
-/*características del menú hamburguesa
-  alto, ancho, color y separación entre sus líneas*/
-
-
-/*estilos de nav:contiene a nav-list y al menu hamburguesa*/
-.nav {
-    display: flex;   
+.menu-back {
+    cursor: pointer;
+    margin: 50px 0px;
+}
+.nav {   
     color:black; 
-    padding:60px;
-}
-
-/*caracteristicas del nav-list:*/
-.nav-list {
-    display:flex;
-}
-
-/*características del nav-mobile(oculto por defecto)*/
-.nav-mobile{
-    display: none;
     position:absolute;
+    right:20px;
+    width:auto;
+}
+.nav-list {
+    display:none;
+}
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+/* Ocultar el menú móvil por defecto */
+.nav-mobile {
+    display: none;
+    position: absolute;
     top: 100%;
     left: 0;
-    right: 0;
-    padding: 0px 10px;   
-    background-color: rgb(245,245,245);
-    overflow:hidden;
-    max-height:0; /*oculta el menu inicialmente*/    
-    font-size:15px;
-    transition: max-height 5s ease-out; /*transición suave */
-    z-index: 5;
-} 
+    width: 100%;
+    background-color: white;
+    z-index: 10;
+    padding: 20px 0;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-20px); /* Ajusta según el efecto deseado */
+}
 .nav-mobile-list {
     width:100%;    
 }
@@ -102,15 +102,15 @@ header {
     display: block;
     max-height: 500px; /*establece el alto cuando se despliega el menú*/
     top:120px;
-}
+    opacity:1;
+    animation: slideDown 0.5s ease forwards;
 
+}
 .list-mobile {
-    white-space: nowrap;
+    width:100%;
     display:flex;
     flex-direction:column;
-    align-items:flex-end;
-    margin-right:45px;
-    padding:0 1px;
+    align-items:flex-end; 
     background-color:rgb(245,245,245);
 }
 .nav-mobile a {
@@ -138,22 +138,22 @@ header {
     height: 50px;
     width:50px;
 }
-.heroe-slider {
-    width:100%;
-    height:auto;
-    margin: 0px auto 0;
-    overflow: hidden;
-    position:relative;
-}
 
+.heroe-slider {
+    position:relative;
+    width:100%;
+    height:500px;        
+    overflow:hidden;
+    margin-bottom:-100px;
+    margin:0px auto 0;
+}
 .heroe-slider ul {
     display: flex;
     padding: 0;
     margin: 0;
-    width: 100%;
-    transition: transform 0.5s ease-in-out; /* Transición para mover las imágenes */   
+    width: 100%; /*para que no se solapen imagenes*/
+    transition: transform 0.5s ease-in-out; /* Transición para mover las imágenes */    
 }
-
 .heroe-slider li {
     width:100%;
     position:relative;
@@ -161,377 +161,87 @@ header {
 }
 .heroe-slider img {
     width:100%;
-    height:200px;
-    display:block;
-    opacity:0.8; /*reduzco la opacidad de la imagen de fono*/
-}
-.prev, .next {
-    position: absolute;
-    top: 50%; /*flechas en el medio*/
-    transform: translateY(-50%);
-    background-color: rgba(0,0,0,0.5); /*color fondo de flecha*/
-    color: white; /*color de flecha*/
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-    padding: 0.5rem;
-    z-index: 8;
-}
-
-.prev {
-    display:none;
-    left: 10px; 
-    /*margen izquierdo de la flecha de prev*/
-}
-
-.next {
-    display:none;
-    right: 10px;
-}
-
-.quienes-somos {
-    background-color: rgb(245,245,245);
-    padding: 60px 10px;
-    margin-top:25px; /*para que cuando toco quienes somos en el menú hamburguesa y se desplaza hacia la sección no lleguen a verse las opciones del nav-mobile*/
-    text-align:center;
-}
-
-p {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-size:1em;
-    line-height:1.5;
-    display:flex;
-    text-align:center;
-    padding: 8px;
-
+    height:250px;
+    opacity:0.8;
 }
 
 h2 {
-    display:flex;
-    justify-content:center;
-    margin-bottom:25px;
-    margin-top:30px;
+    margin-bottom:20px;
+    margin-top:10px;
+    font-size:20px;
+    text-align:center;
 }
-
-.nuestros-horarios ul {
-    margin-left:10px;
+p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size:14px;
+    line-height:1.5;
+} 
+.quienes-somos {
+    background-color:white;
+    scroll-margin-top: -100px; /*para que cuando toco quienes somos en el menú hamburguesa y se desplaza hacia la sección no lleguen a verse las opciones del nav-mobile*/
+    text-align:center;
+    margin-top:-250px;
+    padding: 90px 20px;
+    text-align:center;
 }
-
 .nosotros {
     display:flex;
     flex-direction:column;
 }
 .nosotros img {
-    filter: grayscale(30%); /* Reduce los colores a un 50% */
+    filter: grayscale(30%);
+    margin-bottom:20px; 
 }
 
 .nuestros-servicios {
     width:100%;
-    height:auto;
+    padding: 0px 10px;
 }
+
 .nuestros-servicios img {
     width:100%;
-    height:200px;
     display:block;
     opacity:0.8; /*reduzco la opacidad de la imagen de fono*/
-    padding:20px; /*dejo espacio debajo de cada imagen*/
+    margin-bottom:20px; /*dejo espacio debajo de cada imagen*/
 }
 
 .servicio-titulo {
-    color:black;
-    text-decoration:none;
-    text-align:center;
-    position:relative;
-    width:90%;
-    background-color: #fcbf49;    
-    padding: 10px;
-    margin-top: -20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar el recuadro */
-}
-
-.servicios {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    padding:0;
-    margin: 0 auto;
-    width:100%;
-    align-items:center;
-}
-.servicio-item{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%; /* Aseguramos que el contenedor ocupe el 100% del ancho */
-}
-
-.servicios div {
-    position:relative;
-}
-
-.servicio-item img {
-    width:100%; /* Mantiene la imagen al 100% del contenedor */
-    object-fit: cover; /* Asegura que la imagen cubra el espacio sin deformarse */
-    height:auto;    
-}
-
-.modal {
-    display: none; /* Oculto por defecto */
-    position: fixed;
-    z-index: 1000; /* Asegura que esté por encima del contenido */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;   
-    background-color: rgb(245,245,245); /* Fondo oscuro con opacidad */
-    
-}
-  
-  .modal-content {
-    position:relative;
-    background-color: white;
-    margin: 15% auto;
-    padding: 20px;
-    width: 78%; /* Ajusta el tamaño */
-    margin-left:20px;
-    max-width:800px;
-    max-height:100vh;
-    overflow-y:auto;
-    height:503px;
-    bottom:30px;
-    left:-2px;
-    font-family: "Montserrat", sans-serif;  
-    border-radius: 10px; /* Bordes redondeados opcionales */
-  }
-  .modal-texto{
-    position:relative;
-    padding:15px;
-  }
-  .modal-titulo{
-    text-align:center;
-  }
-
-  .modal.show {
-    display: flex; /* Muestra el modal */
-    opacity: 1; /* Hace el modal visible */
-    align-items: center; /* Centra el contenido verticalmente */
-    width:100%;
-    text-align:justify;
-
-}
-
-  .modal-cerrar {
-    background-color: darkslategray;
-    float: right;
-    font-size: 40px;
-    cursor:pointer;
-    align-items:center;
-    color:white;
-    width:5%;
-  }
-  .modal-content button {
-    background-color: darkslategrey;    
-    font-weight:bold;
-    padding:10px;
-    gap:10px;
-    margin-left:23px;
-    width:40%;
-    height:80px;
-    color:white;
-    font-size:20px;
-  }
-  .coberturas {
-    margin-top:20px;
-}
-
-#contacto-form {
+    color:white; 
+    background-color: #FF6D00;;    
     display:flex;
-    flex-direction: column;
-    max-width: 500px;
-    margin-left: 10px;
-    font-family: "Montserrat", sans-serif;
-    width:90%;
-}
-#contacto-form label {
-    margin-top: 20px;
-    margin-left: 10px;
-    margin-right:10px;
-}
-#contacto-form input, #contacto-form textarea {
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    margin-left:10px;
-    margin-right:10px;
-}
-
-#contacto-form button {
-    padding: 10px;
-    margin-top: 20px;
-    background-color: rgba(244, 162, 97, 0.4);
-    color: black;
-    font-weight:bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom:20px;
-    margin-left:10px;
-    margin-right:10px;
-    width:50%;
-    display:flex;
+    align-items:center;
     justify-content:center;
-}
-.boton-enviar{
-    display:flex;
-    justify-content: center;
-}
-#whatsapp-icon{
-    position:fixed;
-    width:40px;
-    height:40px;
-    cursor:pointer;
-    bottom:20px;
-    right:50px;
-    z-index: 1000;
-    transition: transform 0.3s ease;
-}
-#direccion {
-    text-align: center; /* Centra el texto */
-    padding: 20px; /* Espaciado alrededor de la sección */
-}
-iframe {
-    max-width: 100%; /* Hace que el mapa sea responsive */
-    height: 440px; /* Altura fija del mapa */
-    border: 0; /* Elimina el borde */
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: Start;
-    padding: 20px 10px;
-    position: relative;
-    width: 100%;
-    bottom: 0;
-}
-
-.footer-content p {
-    margin: 0;
-    padding: 5px;
-    font-size: 14px;
-}
-
-.social-icons {
-    margin-top: 10px;
-}
-
-.social-icons a {
-    display: inline-block;
-    margin: 0 10px;
-}
-
-.social-icons img {
-    width: 24px;
-    height: 24px;
-    filter: invert(1); /* Para hacer las imágenes blancas */
-}
-    /*----Desktop------*/
-
-@media (min-width: 768px) {
-
-header {
-    background-color: rgb(245,245,245);
     width:100%;
-    padding:10px 15px;
-    display:flex;
-    height:180px;
-   }
-.menu-container {
-    display:none;
-}
-
-   body {
-    margin:0;
-    padding:0;
-    font-family: "Arial", sans-serif;
-    background-color:white;
-    color:black;
-    overflow-x:hidden;
-}
-.container {
-    gap: 6rem; /*Distancia entre el logo y el menú*/
-    display:flex;
-    flex-direction:row;
-    justify-content:space-between;
-    align-items:center;
-}
-.logo-img { /*tamaño del logo*/
-    height:auto;
-    width:200px;
-}
-.nav-list {
-    list-style: none; /*saco las viñetas*/
-    flex-direction:row; /*una al lado de la otra*/
-    gap: 5rem; /* separo entre cada una*/
-    padding:10px;
-    display:flex;
-    font-size:1.5em;
-}
-
-.heroe-slider {
-    width:100%;
-    margin: 0 auto; /*distancia entre header y heroe-slider*/
-    overflow: hidden;        
-    position:relative;
-    height:auto;
-    }
-
-.heroe-slider ul {
-    display: flex;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    transition: transform 0.8s ease-in-out; /* Transición para mover las imágenes */
-}
-.heroe-slider li {
-    width:100%;
-    position:relative;
-    flex-shrink:0;
-}
-.heroe-slider img {
-    width:100;
-    height:70vh;
-    object-fit:cover;
-    opacity:0.8; /*reduzco la opacidad de la imagen de fono*/
-}
-h2 {
-    margin-bottom:25px;
-    margin-top:30px;
-    font-size:2em;
-}
-p {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-size:2em;
-    padding: 8px;
-    margin-left:60px;
-
-}
-.quienes-somos {
-    background-color: rgb(245,245,245);
-    padding: 60px 10px;
-    margin-top:25px; /*para que cuando toco quienes somos en el menú hamburguesa y se desplaza hacia la sección no lleguen a verse las opciones del nav-mobile*/
+    height:80px;
+    padding: 10px;
+    margin-top:-20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar el recuadro */
+    font-size:16px;
     text-align:center;
-    margin:20px;
+    margin-bottom:20px;
+    border-radius:10px;
+}
+
+.servicio-item{
+    margin-top:50px;
+    width: 90%; /* Aseguramos que el contenedor ocupe el 100% del ancho */
+    position:relative;
+    left:20px;
+    height:400px;
+}
+.servicio-item img {
+    width: 100%; /* Ancho máximo de la imagen igual al contenedor */
+    height: 300px; /* Fija la altura de todas las imágenes */
+    object-fit: cover; /* Asegura que las imágenes se ajusten sin distorsión */
+    border-radius: 10px; /* Bordes redondeados (opcional) */
 }
 .modal {
     position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
+    top:100px;
+    left:22px;
+    width:90%;
+    height:90%;
     display:none;
     align-items:center;
     justify-content:center;
@@ -539,16 +249,63 @@ p {
     z-index:1000;
     transition: opacity 0.3s ease;
 }
+.modal-titulo {
+    padding:20px;
+    font-size:14px;
+    text-align:start;
+}
 
 .modal-content {
-    margin: auto;
+    background-color:white;
+    margin: 5% auto;
     border-radius: 10px;
     max-width:1000px;
-    height:600px;
+    height:auto;
+    padding-bottom:60px;
     text-align: center;
     animation: scale-up 0.5s ease-in-out forwards;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.modal-content a {
+    background-color: #FF6D00;
+    position:absolute;
+    right:20px;
+    bottom:10px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: auto;
+    height: auto;
+    font-size: 18px;
+    text-decoration:none;
+    padding:10px;
+}
+.modal-texto p { 
+    font-size:12px;
+    text-align:start;
+    margin-left:20px;
+    margin-right:20px;
+    padding-bottom:20px;
+}
+.modal-texto ul {
+    font-size:12px;
 } 
+.modal-boton:hover {
+    transform: scale(1.05);
+}
+
+.modal-cerrar{
+    font-size:60px;
+    position: absolute; /* Posicionamiento absoluto */
+    top: 1px; /* Espacio desde la parte superior */
+    right: 20px; /* Espacio desde la derecha */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+}
+.modal-cerrar:hover{
+    color:#FF6D00;
+    
+}
 @keyframes scale-up {
     from {
         transform: scale(0.8);
@@ -560,28 +317,6 @@ p {
     }
 }
 
-.modal-titulo {
-    font-size: 30px;
-}
-.modal-texto {
-    display:flex;
-    font-size: 24px;
-    color: #555;
-    flex-direction:column;
-}
-.modal-texto p, .modal-texto ul {
-    font-size:20px;
-}
-.modal-texto h4{
-    display:flex;
-    flex-direction:start;
-    font-size:20px;
-    margin-top: 15px;
-    margin-left:90px;
-    padding:10px;
-    }
-
-}
 .modal-texto ul {
     padding-left: 20px;
     display:flex;
@@ -597,140 +332,548 @@ p {
     padding:5px;
 }
 
- #contacto-form {
-    max-width: 600px;
-    margin: 0 auto;
- }
+.horarios-contacto{
+    background-color:rgb(245,245,245);
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    height:850px;
 
- footer {
+    
+}
+
+.nuestros-horarios {
+    margin-left:60px;
+    transition:transform 0.3s ease;
+}
+.contact-info {
+    margin-left:60px;
+}
+.contact-info h2 {
+    text-align:left;
+}
+.nuestros-horarios h2{
+    font-size:20px;
+    margin-bottom:30px;
+    text-align:left;
+}
+.nuestros-horarios ul {
+    font-size:14px;
+    text-align:left;
+}
+.nuestros-horarios li {
+    margin-bottom:20px;
+    list-style:none;
+}
+.nuestros-horarios p {
+    font-size:14px;
+    margin-bottom:5px;
+}
+
+.info-item{
+   font-size:14px; 
+   margin-bottom:10px;
+}
+
+.contacto h2 {
+    text-align:left;
+}
+.contacto p {
+    margin-left:60px;
+    padding-bottom:10px;
+}
+.formulario-contacto {
+    margin-left:60px;
+}
+.formulario-contacto h2 {
+    text-align:left;
+}
+.contacto-form input,
+.contacto-form textarea {
+    font-size:14px;
+    padding:8px;
+    margin-bottom: 10px; /* Espacio entre los campos */
+    width: 900%; /* Reduce el ancho en general */
+    max-width: 280px; /* Límite de ancho máximo en pantallas grandes */
+    border-radius: 10px;  
+}
+
+
+.contacto-form button {
+    padding: 0px 10px;
+    margin-top: 10px; /*separación entre formulario y botón de enviar mensaje*/
+    background-color:  #FF6D00;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width:auto;
+    height:50px;
+    font-size:18px;   
+    
+}
+.boton-enviar {
+    display:flex;
+    justify-content:center;
+}
+.visually-hidden {
+    position:absolute;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+}
+.contacto-form input::placeholder,
+.contacto-form textarea::placeholder {
+    color: black; /* Cambia el color del texto */
+    font-size:14px;
+}
+
+#whatsapp-icon{
+    position:fixed;
+    width:30px;
+    height:30px;
+    cursor:pointer;
+    bottom:20px;
+    right:20px;
+    z-index:1000;
+    }
+footer {
     display: flex;
     justify-content: space-between;
     padding: 20px 50px;
  }
-
- .footer-content {
-    display: flex;
+ footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 10px;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+.footer-content {
     flex-direction: column;
-    align-items: flex-start;
- }
-
-
-.menu-icon {
-    display:none; /*lo elimino cuando paso a desktop*/
-}
-.prev, .next {
-    position: absolute;
-    top: 50%; /*flechas en el medio*/
-    transform: translateY(-50%);
-    background-color:grey; /*color fondo de flecha*/
-    color: white; /*color de flecha*/
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-    padding: 0.7rem;
-    z-index: 7;
 }
 
-.prev {
-    display:block;
-    left: px; 
-    /*margen izquierdo de la flecha de prev*/
-}
-
-.next {
-    display:block;
-    right: 10px;
-}
-.nosotros {
-    width:50%;
-    margin: 0 auto;
-}
-.nosotros img {
-    padding:10px;
-    height:90vh;
-    width:100vh;    
-}
-.nuestros-servicios {
-    text-align: center;
-    padding: 50px;
-}
-.servicios {
-    display: flex;
-    flex-direction:row;
-    justify-content: space-between; /* Espacio entre los elementos */
-    gap: 20px; /* Espaciado entre los servicios */
-    flex-wrap: wrap; /* Permite que se ajusten en pantallas más pequeñas */
-    align-items:stretch;
-    cursor:pointer;
-}
-
-
-.nuestros-servicios img {
-    width:100%;
-    height:100%;
-    display:block;
-    opacity:0.8; /*reduzco la opacidad de la imagen de fono*/
-    padding:20px; /*dejo espacio debajo de cada imagen*/
-}
-.servicio-item {
-    padding: 0 30px;
-}
-
-.servicio-item {
-    flex: 1; /* Los elementos ocuparán el mismo espacio */
-    max-width: 25%; /* Limita el ancho máximo de cada servicio */
-    text-align: center;
-    border: 1px solid #ccc; /* Borde opcional para visualización */
-    padding: 10px;
-    justify-content: space-between;
-    min-height: 400px; /* Establece una altura mínima para que todos tengan el mismo alto */
-    border-radius:10px;
-    overflow:hidden;
-    transition:transform 0.3s ease;
-}
-.servicio-item:hover {
-    transform: scale(1.05); /*se agranda el servicio cuando paso el mouse*/
-}
-.servicio-item img {
-    width: 100%; /* Ancho máximo de la imagen igual al contenedor */
-    height: 300px; /* Fija la altura de todas las imágenes */
-    object-fit: cover; /* Asegura que las imágenes se ajusten sin distorsión */
-    border-radius: 10px; /* Bordes redondeados (opcional) */
-}
-.servicio-titulo {
-    display:flex;
-    align-items:center; /*alinea en el centro a los textos del titulo*/
-    justify-content:center; /*alinea en el centro a los textos del titulo en sentido vertical*/
-    margin-top: 10px; /*separa un poco entre foto y titulo*/
-    flex-grow:1 /* Hace que el título llene el espacio necesario*/
-}
-h3 {
-    margin: 10px 0;
-    font-size:25px;
-}
-
-.nuestros-horarios ul {
-    font-size:1.5em;
+.social-icons {
+    margin-top: 10px;
+    margin: 0 10px;
+}   
+.social-icons img {
+    width:  24px;
+    height: 24px;
     margin-left:60px;
 }
-#contacto-form { /*# para llamar ID, que son únicos, en cambio el . es para llamar a una clase, que puede haber varias */
-    max-width: 800px; /*ancho máximo de los elemntos del form*/
-    margin-left: 200px;
-    font-family: "Montserrat", sans-serif;
-    width:90%;
-    font-size:2em;
+.map-container {
+    height:300px;
+    padding-top:px;
+
 }
-#contacto-form input {
-    height:60px;
-}
-#contacto-form button {
-    padding: 10px;
-    margin-top: 20px; /*separación entre formulario y botón de enviar mensaje*/
-    background-color: rgba(244, 162, 97, 0.4);
-    color: black;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width:50%;
-    font-size:0.8em;   
+
+
+/*----Desktop------*/
+
+@media (min-width: 768px) {
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top:5px;
+    }
+    body {
+        margin:0;
+        padding:0;
+        font-family: "Arial", sans-serif;
+        background-color:white;
+        color:black;
+        overflow-x:hidden;
+        width:1800px;
+    }
+
+    header {
+    position:relative;
+    padding:20px 15px;
+    height:120px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    z-index:1000;
+    width:100%;
+    height:auto;
+    }
+
+    .menu-container {
+    display:none;
+    }
+
+    .container {
+    gap: 6rem; /*Distancia entre el logo y el menú*/
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+    }
+
+    .logo-img { /*tamaño del logo*/
+    height:130px;
+    width:auto;
+    margin: 20px 20px;
+    margin-top:5px;    
+    }
+    .nav-list {
+        list-style: none; /*saco las viñetas*/
+        display:flex;
+        flex-direction:row; /*una al lado de la otra*/
+        gap: 80px; /* separo entre cada una*/
+        padding:50px 100px;
+        font-size:20px;
+    }
+    .nav-mobile {
+        display:none;
+    }
+    /*estilos de nav-list (quienes somos, contacto, etc...) pongo color negro y quito subrayado*/
+    .nav-list a{
+        color:black;
+        text-decoration:none;
+    }
+    .nav-list li a:hover {
+    /* Color al pasar el mouse (cámbialo al color que desees) */
+        color:#FF6D00; 
+    }
+    .heroe-slider {
+        width:100%;
+        height:auto;        
+        overflow:hidden;
+        margin-bottom:-100px;
+    }
+
+    .heroe-slider ul {
+        display: flex;
+        padding: 0;
+        margin: 0;
+        width: 100%; /*para que no se solapen imagenes*/
+        transition: transform 2s ease-in-out; /* Transición para mover las imágenes */
+        
+    }
+    .heroe-slider li {
+        width:100%;
+        position:relative;
+        flex-shrink:0;
+    }
+    .heroe-slider img {
+        width:100%;
+        height:70vh;
+        object-fit:cover;
+        opacity:0.8;
+    }    
+
+    h2 {
+        margin-bottom:25px;
+        margin-top:30px;
+        font-size:32px;
+        text-align:center;
+    }
+    p {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size:18px;
+        padding: 8px;
+        margin-left:60px;
+        text-align:center;
+    }
+    .quienes-somos {
+        flex-direction:row;
+        background-color: rgba(255, 255, 255, 0.884);
+        padding: 150px 10px;
+        margin-top:10px; /*para que cuando toco quienes somos en el menú hamburguesa y se desplaza hacia la sección no lleguen a verse las opciones del nav-mobile*/
+        margin:20px;
+        max-width:1600px;
+    }
+    .nosotros{
+        display:flex;
+        flex-direction:row;
+        height:550px;
+        margin-left:90px;
+    }
+    .nosotros img {
+        padding:20px;
+        height:auto;
+        max-width:800px;
+        filter:grayscale(20%);    
+    }
+    .nuestros-servicios {
+        margin-top:-150px;
+        padding-top:10px;
+        
+    }
+    .servicios {
+        display: flex;
+        flex-direction:row;
+        justify-content: center; /* Espacio entre los elementos */
+        gap: 20px; /* Espaciado entre los servicios */
+        flex-wrap: wrap; /*uso wrap en el contenedor para que los elementos se dividan en filas, se envuelven an la fila siguiente cuando ya no hay espacio en la actual*/
+        align-items:stretch;
+        cursor:pointer;
+        margin-top:10px;
+        margin-right:px;
+    }
+    .nuestros-servicios img {
+        opacity:0.8; /*reduzco la opacidad de la imagen de fono*/
+        padding:20px; /*dejo espacio debajo de cada imagen*/
+        
+    }
+    .servicio-item {
+        padding: 10px;
+        flex: 1; /* Los elementos ocuparán el mismo espacio*/ 
+        max-width: 35%; /* Limita el ancho máximo de cada servicio*/ 
+        text-align: center;
+        border: 2px solid #ccc; /* Borde opcional para visualización*/
+        min-height: 400px; /* Establece una altura mínima para que todos tengan el mismo alto*/ 
+        border-radius:10px;
+        transition:transform 0.3s ease;
+        flex: 1 1 25%; /* Ocupa aproximadamente el 25% del ancho, para dos elementos en una fila */
+        /*el primer 1 es de flex-grow: puede crecer si hay espacio extra en el contenedor. Como todos tienen 1, crecerán en la misma proporción. el segundo 1 es shrink: permite que se encoja cuando hay espacio limitado*/
+        max-width: 25%; /* Limita el ancho máximo para mantener dos elementos por fila */
+        box-sizing: border-box; /*Asegura que el padding no expanda el tamaño del elemento*/
+    }
+    .servicio-item img {
+        width: 100%; /* Ancho máximo de la imagen igual al contenedor */
+        height: 300px; /* Fija la altura de todas las imágenes */
+        object-fit: cover; /* Asegura que las imágenes se ajusten sin distorsión */
+        border-radius: 10px; /* Bordes redondeados (opcional) */
+    }
+    .servicio-titulo {
+        display:flex;
+        border-radius:10px;
+        align-items:center; /*alinea en el centro a los textos del titulo*/
+        justify-content:center; /*alinea en el centro a los textos del titulo en sentido vertical*/
+        margin-top: -20px; /*separa un poco entre foto y titulo*/
+        flex-grow:1; /* Hace que el título llene el espacio necesario*/
+        font-size:16px;
+    }
+    .horarios-contacto{
+        background-color:rgb(245,245,245);
+        width:100%;
+        display:flex;
+        flex-direction:row;
+        height:630px;
+        margin-top:20px;
+    }
+    .nuestros-horarios {
+        margin-left:60px;
+        transition:transform 0.3s ease;
+
+    }
+    .nuestros-horarios h2{
+        font-size:32px;
+        margin-bottom:30px;
+    }
+    .nuestros-horarios ul {
+        font-size:18px;
+        margin-left:60px;
+    }
+    .nuestros-horarios li {
+        margin-bottom:20px;
+        list-style:none;
+    }
+    .nuestros-horarios p {
+        font-size:18px;
+        margin-bottom:5px;
+    }
+    .nuestros-horarios h2 {
+        text-align:left;
+    }
+    .info-item{
+    font-size:18px; 
+    margin-bottom:10px;
+    margin-left:50px;
+    }
+    .horarios-direccion {
+        display:flex;
+        flex-direction:column;
+        gap:80px;
+        width:50%;
+        align-items:center;
+    }
+    .contacto {
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        width:50%;
+        padding-right:200px;
+    }
+
+    .modal {
+        position:fixed;
+        top:-50px;
+        left:0;
+        width:100%;
+        height:100%;
+        display:none;
+        align-items:center;
+        justify-content:center;
+        background-color: rgba(0, 0, 0, 0.2);
+        z-index:1000;
+        transition: opacity 0.3s ease;
+    }
+
+    .modal-titulo {
+        font-size:18px;
+        padding:25px;
+    }
+    .modal-content {
+        background-color:white;
+        margin: 5% auto;
+        border-radius: 10px;
+        max-width:1000px;
+        height:auto;
+        text-align: center;
+        animation: scale-up 0.5s ease-in-out forwards;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    } 
+    .modal-content a {
+        background-color: #FF6D00;
+        position: absolute;
+        right:20px;
+        bottom:10px;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        width: auto;
+        height: auto;
+        font-size: 18px;
+        text-decoration: none;
+    }
+    .modal-boton:hover {
+        transform: scale(1.05);
+    }
+    .modal-cerrar{
+        font-size:60px;
+        position: absolute; /* Posicionamiento absoluto */
+        top: 10px; /* Espacio desde la parte superior */
+        right: 20px; /* Espacio desde la derecha */
+        cursor: pointer; /* Cambia el cursor al pasar por encima */    
+    }
+    .modal-cerrar:hover{
+        color:#FF6D00;
+        
+    }
+    @keyframes scale-up {
+        from {
+            transform: scale(0.8);
+            opacity: 0;
+        }
+        to {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    .modal-texto p, .modal-texto ul {
+        font-size:16px;
+    }
+
+    .modal-texto ul {
+        padding-left: 20px;
+        display:flex;
+        flex-direction:column;
+        align-items:start;
+        margin-left:30px;
+    }
+
+    .modal-texto ul li {
+        list-style-type: disc;
+        margin-left: 0px;
+        list-style-position: inside;
+        padding:5px;
+    }
+
+    .contacto-form { /*# para llamar ID, que son únicos, en cambio el . es para llamar a una clase, que puede haber varias */
+        max-width: 600px; /*ancho máximo de los elemntos del form*/
+        font-family: "Montserrat", sans-serif;
+        padding:10px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .formulario-contacto p {
+        text-align:left;
+    }
+    .formulario-contacto h2 {
+        text-align:center;
+    }
+    .contacto-form input,
+    .contacto-form textarea {
+        width:100% !important; /* Intenta forzar el ancho completo */
+        max-width:none; /* Asegura que no haya un max-width limitante */
+        height:50px;
+        border-radius:10px;
+        margin-bottom:10px;
+        padding-left:10px;
+        font-size:16px;
+        box-sizing:border-box;
+    }
+    .contacto-form textarea {
+        height:auto;
+        padding-top:10px;
+    }
+    .contacto-form button {
+        padding: 10px;
+        margin-top: 20px; /*separación entre formulario y botón de enviar mensaje*/
+        background-color:  #FF6D00;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        width:300px;
+        height:50px;
+        font-size:18px;   
+    }
+    .boton-enviar {
+        display:flex;
+        justify-content:center;
+    }
+    .contacto-form button:hover {
+        transform: scale(1.05); /*se agranda el servicio cuando paso el mouse*/
+    }
+    .visually-hidden {
+        position:absolute;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+    }
+    #contacto-form input::placeholder,
+    #contacto-form textarea::placeholder {
+        color: black; /* Cambia el color del texto */
+        font-size:16px;
+    }
+
+    #whatsapp-icon{
+        position:fixed;
+        width:40px;
+        height:40px;
+        cursor:pointer;
+        bottom:20px;
+        right:50px;
+        z-index:1000;
+    }
+    footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 50px;
+        background-color: #333;
+        color: #fff;
+        padding: 20px 10px;
+        position: relative;
+        width: 100%;
+        bottom: 0;
+    }
+    .footer-content {
+        flex-direction: column;
+    }
+    .social-icons {
+        margin-top: 10px;
+        margin: 0 10px;
+    }   
+    .social-icons img {
+        width:  24px;
+        height: 24px;
+        margin-left:60px;
+    }
+
 }

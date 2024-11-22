@@ -1,5 +1,6 @@
 // DOMContentLoaded permite que se cargue todo al iniciar la pagina
 document.addEventListener('DOMContentLoaded', () => {
+    
 
     //Guardo en las variables del botón hamburguesa y el listado a mostrado
     const hamburgerButton = document.querySelector('#menu-toggle'); 
